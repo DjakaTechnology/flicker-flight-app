@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="paddingRegular">9dp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">57dp</dimen>
+    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="space_between_form">12dp</dimen>
+    <dimen name="home_card_height">140dp</dimen>
+    <dimen name="home_card_elevation">50dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+</resources>
