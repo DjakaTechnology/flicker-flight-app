@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment"
+    tools:context=".ui.HomeFragment"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -81,12 +81,12 @@
 
                 <LinearLayout
                     android:layout_marginTop="12dp"
+                    android:layout_marginBottom="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -96,13 +96,12 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/avenir_medium"
                         android:gravity="right"
-                        android:text="Ke mana"
+                        android:text="Ke mana ?"
                         android:textColor="@color/black_sub"
                         android:textSize="12sp" />
 
@@ -204,6 +203,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/space_between_form"
+                    android:layout_marginBottom="6dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -216,11 +216,12 @@
                         android:textSize="12sp" />
 
                     <Switch
-                        android:id="@+id/switch1"
+                        android:id="@+id/switch_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/avenir_medium"
+                        android:switchPadding="6dp"
                         android:gravity="right|center"
                         android:text="Pulang ?"
                         android:textColor="@color/black_sub"
@@ -255,6 +256,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/avenir_medium"
                     android:layout_marginTop="@dimen/space_between_form"
+                    android:layout_marginBottom="6dp"
                     android:text="Pulang kapan?"
                     android:textColor="@color/black_sub"
                     android:textSize="12sp" />
@@ -263,7 +265,6 @@
                     android:id="@+id/editText2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
                     android:background="@drawable/bg_et"
                     android:drawableStart="@drawable/ic_calendar"
                     android:drawablePadding="12dp"

@@ -1,43 +1,33 @@
-package id.djaka.flicker
+package id.djaka.flicker.ui.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import id.djaka.flicker.R
+import id.djaka.flicker.ui.HomeFragment
+import id.djaka.mvpanddagger.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainPresenter>(), MainView {
     private var last:Int = 0
-    private var homeFragment:Fragment? = null
-
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.navigation_home -> {
-                if(homeFragment == null)
-                    homeFragment = HomeFragment()
-                replaceFrame(homeFragment, 0)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_dashboard -> {
-
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottom_nav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        presenter.onViewCreated()
     }
 
-    private fun replaceFrame(f: Fragment?, i:Int){
+    override fun instantiatePresenter(): MainPresenter {
+        return MainPresenter(this)
+    }
+
+    override fun setBottomNavigationBehaviour(navListener : BottomNavigationView.OnNavigationItemSelectedListener) {
+        bottom_nav.setOnNavigationItemSelectedListener(navListener)
+    }
+
+    override fun replaceFrame(f: Fragment?, i:Int){
         val transaction = supportFragmentManager.beginTransaction()
         if (last > i)
             transaction.setCustomAnimations(
@@ -56,5 +46,10 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
 
         last = i
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onViewDestroyed()
     }
 }
