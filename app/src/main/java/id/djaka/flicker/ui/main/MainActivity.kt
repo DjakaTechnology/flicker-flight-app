@@ -2,10 +2,8 @@ package id.djaka.flicker.ui.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import id.djaka.flicker.R
-import id.djaka.flicker.ui.HomeFragment
 import id.djaka.mvpanddagger.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 

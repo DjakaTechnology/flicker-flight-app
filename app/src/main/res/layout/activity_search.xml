@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.SearchActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/bg_main" />
+
+        <LinearLayout
+            android:padding="@dimen/activity_padding"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:drawableStart="@drawable/ic_right_arrow_white"
+                android:drawablePadding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Pencarian Pergi"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingTop="32dp"
+                android:layout_marginBottom="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/avenir_medium"
+                    android:includeFontPadding="false"
+                    android:text="DPS"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="@+id/tv_from" />
+
+                <TextView
+                    android:id="@+id/tv_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/avenir_medium"
+                    android:includeFontPadding="false"
+                    android:text="JOG"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_from_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_regular"
+                    android:includeFontPadding="false"
+                    android:text="Yogyakarta"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_from"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_from" />
+
+                <TextView
+                    android:id="@+id/tv_to_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_regular"
+                    android:includeFontPadding="false"
+                    android:text="Denpasar Bali"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_to"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_to" />
+
+                <TextView
+                    android:id="@+id/tv_to_city2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/avenir_regular"
+                    android:text="28 November 2019"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                <TextView
+                    android:id="@+id/tv_to_city3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/avenir_regular"
+                    android:text="1 Dewasa, 1 Anak-anak"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_to_city2" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:rotation="180"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_from"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_to"
+                    app:srcCompat="@drawable/ic_right_arrow_white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <include android:layout_width="match_parent"  layout="@layout/rv_ticket_search"
+                android:layout_height="wrap_content" />
+            <include layout="@layout/rv_ticket_search"/>
+            <include layout="@layout/rv_ticket_search"/>
+            <include layout="@layout/rv_ticket_search"/>
+            <include layout="@layout/rv_ticket_search"/>
+            <include layout="@layout/rv_ticket_search"/>
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>
