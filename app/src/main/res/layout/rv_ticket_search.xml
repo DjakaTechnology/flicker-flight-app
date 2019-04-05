@@ -6,6 +6,7 @@
     android:clipToPadding="false"
     android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_item"
         android:layout_marginBottom="12dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="45dp"

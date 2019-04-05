@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_depart_city3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="false"
+        android:text="05:11"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_destination_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_destination_city" />
+
+    <TextView
+        android:id="@+id/tv_depart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_padding"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/avenir_bold"
+        android:includeFontPadding="false"
+        android:text="Berangkat"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_depart_airport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/avenir_medium"
+        android:includeFontPadding="false"
+        android:text="JOG"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_depart"
+        app:layout_constraintTop_toBottomOf="@+id/tv_depart" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/black_sub"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_depart_airport"
+        app:layout_constraintEnd_toStartOf="@+id/tv_destination_airport"
+        app:layout_constraintStart_toEndOf="@+id/tv_depart_airport"
+        app:layout_constraintTop_toTopOf="@+id/tv_destination_airport" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/ic_circle" />
+
+    <TextView
+        android:id="@+id/tv_destination_airport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/avenir_medium"
+        android:includeFontPadding="false"
+        android:text="DPS"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_depart" />
+
+    <TextView
+        android:id="@+id/tv_depart_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_regular"
+        android:includeFontPadding="false"
+        android:text="Yogyakarta"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_depart_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_depart_airport" />
+
+    <TextView
+        android:id="@+id/tv_depart_city5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/avenir_regular"
+        android:includeFontPadding="false"
+        android:text="JT-11"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_depart_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_depart_city2" />
+
+    <TextView
+        android:id="@+id/tv_depart_city4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/avenir_regular"
+        android:includeFontPadding="false"
+        android:text="28 November 2019"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_depart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_depart" />
+
+    <TextView
+        android:id="@+id/tv_depart_city2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="false"
+        android:text="05:11"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_depart_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_depart_city" />
+
+    <TextView
+        android:id="@+id/tv_destination_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenir_regular"
+        android:includeFontPadding="false"
+        android:text="Denpasar Bali"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_destination_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_destination_airport" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_depart_city5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_depart_city5"
+        app:srcCompat="@drawable/ic_profile" />
+</androidx.constraintlayout.widget.ConstraintLayout>

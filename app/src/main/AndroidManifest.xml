@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.search.SearchActivity"></activity>
+        <activity android:name=".ui.DetailOrderActivity"></activity>
+        <activity android:name=".ui.search.SearchActivity" />
         <activity
             android:name=".ui.main.MainActivity"
             android:label="@string/title_activity_main">
