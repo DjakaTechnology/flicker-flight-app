@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailOrderContactActivity">
+    tools:context=".ui.detailOrderContact.DetailOrderContactActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -171,7 +171,7 @@
             <include layout="@layout/rv_passanger_contact"/>
 
             <Button
-                android:id="@+id/btn_search3"
+                android:id="@+id/btn_pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"

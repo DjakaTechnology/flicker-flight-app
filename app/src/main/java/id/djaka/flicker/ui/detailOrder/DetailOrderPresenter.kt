@@ -2,8 +2,7 @@ package id.djaka.flicker.ui.detailOrder
 
 import android.content.Context
 import android.content.Intent
-import id.djaka.flicker.ui.DetailOrderContactActivity
-import id.djaka.flicker.ui.search.SearchActivity
+import id.djaka.flicker.ui.detailOrderContact.DetailOrderContactActivity
 import id.djaka.mvpanddagger.base.BasePresenter
 
 class DetailOrderPresenter(detailOrderView: DetailOrderView) : BasePresenter<DetailOrderView>(detailOrderView){
