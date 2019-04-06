@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailOrderContactActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/activity_padding"
+            android:paddingTop="24dp"
+            android:paddingEnd="@dimen/activity_padding"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_bold"
+                android:text="Kontak yang Dapat Dihubungi"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_between_form"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Title"
+                android:textColor="@color/black_sub"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_et"
+                android:ems="10"
+                android:fontFamily="@font/avenir_medium"
+                android:hint="Tuan / Nyonya ?"
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black_sub"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_between_form"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Nama Lengkap"
+                android:textColor="@color/black_sub"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_title3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_et"
+                android:ems="10"
+                android:fontFamily="@font/avenir_medium"
+                android:hint="Tulis nama lengkap anda"
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black_sub"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_between_form"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Email"
+                android:textColor="@color/black_sub"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_title4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_et"
+                android:ems="10"
+                android:fontFamily="@font/avenir_medium"
+                android:hint="Tulis alamat email anda "
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black_sub"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_between_form"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_medium"
+                android:text="No Handphone"
+                android:textColor="@color/black_sub"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_title5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_et"
+                android:ems="10"
+                android:fontFamily="@font/avenir_medium"
+                android:hint="Tulis nomor hp anda "
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black_sub"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginTop="16dp"
+            android:paddingStart="@dimen/activity_padding"
+            android:paddingTop="24dp"
+            android:paddingEnd="@dimen/activity_padding"
+            android:paddingBottom="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_bold"
+                android:text="Kontak yang Dapat Dihubungi"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <include layout="@layout/rv_passanger_contact"/>
+
+            <Button
+                android:id="@+id/btn_search3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_primary"
+                android:text="Bayar"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

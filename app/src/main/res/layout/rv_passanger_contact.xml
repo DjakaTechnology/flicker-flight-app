@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/avenir_bold"
+        android:text="Dewasa 1"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_between_form"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/avenir_medium"
+        android:text="Title"
+        android:textColor="@color/black_sub"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_et"
+        android:ems="10"
+        android:fontFamily="@font/avenir_medium"
+        android:hint="Tuan / Nyonya ?"
+        android:inputType="textPersonName"
+        android:paddingStart="18dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black_sub"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_between_form"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/avenir_medium"
+        android:text="Nama Lengkap"
+        android:textColor="@color/black_sub"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/et_title3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_et"
+        android:ems="10"
+        android:fontFamily="@font/avenir_medium"
+        android:hint="Tulis nama lengkap anda"
+        android:inputType="textPersonName"
+        android:paddingStart="18dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black_sub"
+        android:textSize="14sp" />
+
+</LinearLayout>
