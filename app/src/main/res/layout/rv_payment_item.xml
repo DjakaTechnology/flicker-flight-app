@@ -8,7 +8,9 @@
     android:paddingTop="6dp"
     android:clickable="true"
     android:foreground="?selectableItemBackground"
-    android:paddingBottom="6dp">
+    android:background="@color/white"
+    android:id="@+id/cl_payment_item"
+    >
 
     <View
         android:id="@+id/view2"
@@ -38,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="Manidri Virtual Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent" />
