@@ -6,6 +6,32 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:spinnerItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
+
+        <!-- For each individual Spinner list item once clicked on -->
+        <item name="android:spinnerDropDownItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
+    </style>
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/avenir_demi</item>
+        <item name="android:textColor">@color/black_main</item>
+    </style>
+    <style name="ActionBar" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:spinnerItemStyle">
+        @style/spinnerDropDownItemStyle
+    </item>
+
+    <!-- For each individual Spinner list item once clicked on -->
+    <item name="android:spinnerDropDownItemStyle">
+        @style/spinnerDropDownItemStyle
+    </item>
     </style>
 
 </resources>
