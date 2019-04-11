@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeatActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:columnCount="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rowCount="2">
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_demi"
+            android:textAlignment="center"
+            app:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_demi"
+            android:text="A"
+            android:textAlignment="center"
+            android:textColor="@color/black_main"
+            app:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_demi"
+            android:text="B"
+            android:textAlignment="center"
+            android:textColor="@color/black_main"
+            app:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_demi"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/black_main"
+            app:layout_gravity="center" />
+
+        <FrameLayout
+            android:id="@+id/button"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/ic_seat"
+            android:backgroundTint="@color/red"
+            android:text="1"
+            android:textColor="@color/white">
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/avenir_demi"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/ic_seat"
+            android:text="1"
+            android:textColor="@color/white" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/avenir_demi"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:elevation="45dp"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/activity_padding"
+        android:paddingEnd="@dimen/activity_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_btn_primary"
+            android:text="Selanjutnya"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

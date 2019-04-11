@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingBottom="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        app:cardCornerRadius="16dp"
+        android:foreground="?selectableItemBackground"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        app:cardElevation="45dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/yellow">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.31"
+                    app:srcCompat="@drawable/ic_clock" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/avenir_regular"
+                    android:paddingBottom="12dp"
+                    android:text="In Progress"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:rotation="180"
+                    app:layout_constraintBottom_toTopOf="@+id/textView44"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_current_pos2"
+                    app:layout_constraintStart_toEndOf="@+id/tv_current_pos"
+                    app:layout_constraintTop_toTopOf="@+id/tv_current_pos"
+                    app:srcCompat="@drawable/ic_right_arrow_black" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_regular"
+                    android:text="Yogyakarta"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_current_pos" />
+
+                <TextView
+                    android:id="@+id/tv_current_pos2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_demi"
+                    android:text="JOG"
+                    android:textColor="@color/black_main"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView44"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_regular"
+                    android:text="Yogyakarta"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_current_pos"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_current_pos" />
+
+                <TextView
+                    android:id="@+id/tv_current_pos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_demi"
+                    android:text="JOG"
+                    android:textColor="@color/black_main"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    app:columnCount="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                    >
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Date"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="28 November 2019"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Time"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_bold"
+                        android:text="05:11 - 08:55"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Passanger(s)"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Passanger Name"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:textColor="@color/black_main"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Passanger Name"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:paddingTop="6dp"
+                        android:text="Total Cost"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:paddingTop="6dp"
+                        android:text="Rp. 300.000"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:paddingRight="12dp"
+                        android:text="Payment Status"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_medium"
+                        android:text="Payed"
+                        android:textColor="@color/green"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+                </androidx.gridlayout.widget.GridLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/ic_home" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
