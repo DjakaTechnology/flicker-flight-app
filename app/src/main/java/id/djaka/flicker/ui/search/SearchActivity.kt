@@ -1,9 +1,8 @@
 package id.djaka.flicker.ui.search
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import id.djaka.flicker.R
-import id.djaka.mvpanddagger.base.BaseActivity
+import id.djaka.flicker.base.BaseActivity
 import kotlinx.android.synthetic.main.rv_ticket_search.*
 
 class SearchActivity : BaseActivity<SearchPresenter>(), SearchView{

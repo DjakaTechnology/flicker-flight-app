@@ -13,7 +13,7 @@
     >
 
     <TextView
-        android:id="@+id/tv_from2"
+        android:id="@+id/tv_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -23,12 +23,11 @@
         android:text="JOG"
         android:textColor="@color/black_main"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_from_city2"
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -38,8 +37,23 @@
         android:textColor="@color/black_main"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_from2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_from2" />
+        app:layout_constraintStart_toStartOf="@+id/tv_code"
+        app:layout_constraintTop_toBottomOf="@+id/tv_code" />
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/avenir_regular"
+        android:includeFontPadding="false"
+        android:text="Yogyakarta"
+        android:textColor="@color/black_main"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_code" />
 
     <View
         android:id="@+id/view2"

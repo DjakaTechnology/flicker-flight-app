@@ -1,8 +1,8 @@
 package id.djaka.flicker.ui.home
 
-import id.djaka.mvpanddagger.base.BaseView
+import id.djaka.flicker.base.BaseView
 
-interface HomeView : BaseView{
+interface HomeView : BaseView {
 
 
 }

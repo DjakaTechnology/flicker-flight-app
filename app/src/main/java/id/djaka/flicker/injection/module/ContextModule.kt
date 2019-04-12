@@ -1,10 +1,10 @@
-package id.djaka.mvpanddagger.injection.module
+package id.djaka.flicker.injection.module
 
 import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import id.djaka.mvpanddagger.base.BaseView
+import id.djaka.flicker.base.BaseView
 
 @Module
 

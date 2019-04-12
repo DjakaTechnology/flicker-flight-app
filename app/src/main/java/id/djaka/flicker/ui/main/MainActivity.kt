@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import id.djaka.flicker.R
-import id.djaka.mvpanddagger.base.BaseActivity
+import id.djaka.flicker.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainPresenter>(), MainView {
@@ -23,6 +23,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
 
     override fun setBottomNavigationBehaviour(navListener : BottomNavigationView.OnNavigationItemSelectedListener) {
         bottom_nav.setOnNavigationItemSelectedListener(navListener)
+        bottom_nav.selectedItemId = R.id.navigation_home
     }
 
     override fun replaceFrame(f: Fragment?, i:Int){

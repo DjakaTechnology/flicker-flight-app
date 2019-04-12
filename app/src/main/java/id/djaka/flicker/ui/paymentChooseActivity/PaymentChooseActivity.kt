@@ -2,7 +2,7 @@ package id.djaka.flicker.ui.paymentChooseActivity
 
 import android.os.Bundle
 import id.djaka.flicker.R
-import id.djaka.mvpanddagger.base.BaseActivity
+import id.djaka.flicker.base.BaseActivity
 import kotlinx.android.synthetic.main.rv_payment_item.*
 
 class PaymentChooseActivity : BaseActivity<PaymentChoosePresenter>(), PaymentChooseView {

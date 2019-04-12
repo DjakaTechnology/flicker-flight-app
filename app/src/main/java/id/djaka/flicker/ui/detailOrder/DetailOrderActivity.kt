@@ -2,7 +2,7 @@ package id.djaka.flicker.ui.detailOrder
 
 import android.os.Bundle
 import id.djaka.flicker.R
-import id.djaka.mvpanddagger.base.BaseActivity
+import id.djaka.flicker.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail_order.*
 
 class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderView {

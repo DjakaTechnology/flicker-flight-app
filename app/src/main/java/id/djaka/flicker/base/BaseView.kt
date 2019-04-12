@@ -1,4 +1,4 @@
-package id.djaka.mvpanddagger.base
+package id.djaka.flicker.base
 
 import android.content.Context
 

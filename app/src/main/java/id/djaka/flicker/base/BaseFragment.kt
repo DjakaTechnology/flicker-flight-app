@@ -1,8 +1,7 @@
-package id.djaka.mvpanddagger.base
+package id.djaka.flicker.base
 
 import android.content.Context
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<basePresenter: BasePresenter<BaseView>>: BaseView, Fragment(){

@@ -1,13 +1,12 @@
 package id.djaka.flicker.ui.main
 
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.djaka.flicker.ProfileFragment
 import id.djaka.flicker.R
 import id.djaka.flicker.TicketsFragment
 import id.djaka.flicker.ui.home.HomeFragment
-import id.djaka.mvpanddagger.base.BasePresenter
+import id.djaka.flicker.base.BasePresenter
 
 class MainPresenter(mainView: MainView) : BasePresenter<MainView>(mainView){
     private var homeFragment: Fragment? = null

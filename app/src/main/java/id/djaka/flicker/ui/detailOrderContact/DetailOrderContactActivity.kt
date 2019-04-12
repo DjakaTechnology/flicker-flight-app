@@ -1,13 +1,8 @@
 package id.djaka.flicker.ui.detailOrderContact
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import id.djaka.flicker.R
-import id.djaka.flicker.ui.detailOrder.DetailOrderActivity
-import id.djaka.flicker.ui.detailOrder.DetailOrderPresenter
-import id.djaka.flicker.ui.detailOrder.DetailOrderView
-import id.djaka.mvpanddagger.base.BaseActivity
-import id.djaka.mvpanddagger.base.BasePresenter
+import id.djaka.flicker.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail_order_contact.*
 
 class DetailOrderContactActivity : BaseActivity<DetailOrderContactPresenter>(), DetailOrderContactView {

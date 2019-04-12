@@ -1,6 +1,6 @@
 package id.djaka.flicker.ui.detailOrder
 
-import id.djaka.mvpanddagger.base.BaseView
+import id.djaka.flicker.base.BaseView
 
 interface DetailOrderView : BaseView {
 }

@@ -3,7 +3,7 @@ package id.djaka.flicker.ui.detailOrderContact
 import android.content.Context
 import android.content.Intent
 import id.djaka.flicker.ui.paymentChooseActivity.PaymentChooseActivity
-import id.djaka.mvpanddagger.base.BasePresenter
+import id.djaka.flicker.base.BasePresenter
 
 class DetailOrderContactPresenter(detailOrderContactView: DetailOrderContactView) : BasePresenter<DetailOrderContactView>(detailOrderContactView){
     fun launchPaymentActivity(c:Context){

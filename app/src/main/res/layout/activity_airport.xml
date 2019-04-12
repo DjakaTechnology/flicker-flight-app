@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AirportActivity">
-    <include layout="@layout/rv_airport_item"/>
+    android:orientation="vertical"
+    tools:context=".ui.airport.AirportActivity" >
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_airport"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -116,10 +116,14 @@
                     android:orientation="horizontal">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_from"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:paddingStart="16dp">
+                        android:paddingStart="16dp"
+                        android:focusable="true">
 
                         <TextView
                             android:id="@+id/textView10"
@@ -131,12 +135,22 @@
                             app:layout_constraintStart_toStartOf="@+id/tv_current_pos"
                             app:layout_constraintTop_toBottomOf="@+id/tv_current_pos" />
 
-                        <Spinner
+                        <TextView
                             android:id="@+id/tv_current_pos"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:entries="@array/dummy"
-                            android:spinnerMode="dropdown"
+                            android:fontFamily="@font/avenir_demi"
+                            android:text="JOG"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/spinner"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_dropdown"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -153,7 +167,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingStart="16dp"
+                        android:id="@+id/cl_to"
+                        android:clickable="true"
+                        android:foreground="?selectableItemBackground"
                         android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/spinner2"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_dropdown"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/textView11"
@@ -165,14 +191,15 @@
                             app:layout_constraintStart_toStartOf="@+id/tv_destination"
                             app:layout_constraintTop_toBottomOf="@+id/tv_destination" />
 
-                        <Spinner
+                        <TextView
                             android:id="@+id/tv_destination"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:entries="@array/dummy"
-                            android:spinnerMode="dropdown"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:fontFamily="@font/avenir_demi"
+                            android:text="DPS"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
@@ -280,7 +307,8 @@
                             android:fontFamily="@font/avenir_medium"
                             android:text="Dewasa"
                             android:textColor="@color/black_sub"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="MissingConstraints" />
 
                         <EditText
                             android:id="@+id/et_adult"

@@ -1,20 +1,25 @@
-package id.djaka.mvpanddagger.injection.component
+package id.djaka.flicker.injection.component
 
 import dagger.BindsInstance
 import dagger.Component
-import id.djaka.mvpanddagger.base.BaseView
-import id.djaka.mvpanddagger.injection.module.ContextModule
+import id.djaka.flicker.base.BaseView
+import id.djaka.flicker.injection.module.ContextModule
+import id.djaka.flicker.injection.module.NetworkModule
+import id.djaka.flicker.ui.airport.AirportPresenter
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [ContextModule::class])
+@Component(modules = [ContextModule::class, NetworkModule::class])
 interface PresenterInjection{
+
+    fun inject(airportPresenter: AirportPresenter)
 
     @Component.Builder
     interface Builder{
-        fun build():PresenterInjection
+        fun build(): PresenterInjection
 
-        fun contextModule(contextModule: ContextModule):Builder
+        fun contextModule(contextModule: ContextModule): Builder
+        fun networkModule(networkModule: NetworkModule):Builder
 
         @BindsInstance
         fun baseView(baseView: BaseView): Builder

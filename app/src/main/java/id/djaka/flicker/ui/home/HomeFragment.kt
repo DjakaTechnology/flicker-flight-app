@@ -2,13 +2,12 @@ package id.djaka.flicker.ui.home
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import id.djaka.flicker.R
-import id.djaka.mvpanddagger.base.BaseFragment
+import id.djaka.flicker.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
@@ -31,6 +30,8 @@ class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
 
     private fun prepareButtonAction(v:View) {
         v.btn_search.setOnClickListener { presenter.launchSearchActivity(context) }
+        v.cl_to.setOnClickListener { presenter.launchAirportActivity(context) }
+        v.cl_from.setOnClickListener { presenter.launchAirportActivity(context) }
     }
 
     override fun onDestroy() {
