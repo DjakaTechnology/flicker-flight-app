@@ -76,10 +76,13 @@ class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
 
 
     private fun prepareOnClickAction() {
-        v.btn_search.setOnClickListener { presenter.launchSearchActivity(context) }
+        v.btn_search.setOnClickListener { presenter.launchSearchActivity(context, airportFrom, airportTo, et_adult.text.toString().toInt()) }
         v.cl_from.setOnClickListener { presenter.launchAirportActivity(this, AIRPORT_FROM) }
         v.cl_to.setOnClickListener { presenter.launchAirportActivity(this, AIRPORT_TO) }
         v.fab_switch.setOnClickListener{presenter.switchAirport(airportFrom, airportTo)}
+
+        v.btn_increase_adult.setOnClickListener { presenter.addAdult(1, v.et_adult) }
+        v.btn_decrease_adult.setOnClickListener { presenter.addAdult(-1, v.et_adult) }
 
         prepareDatePicker()
     }

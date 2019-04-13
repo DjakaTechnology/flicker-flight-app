@@ -3,6 +3,8 @@ package id.djaka.flicker.ui.home
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.view.View
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import id.djaka.flicker.ui.search.SearchActivity
 import id.djaka.flicker.base.BasePresenter
@@ -53,6 +55,13 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView){
                 view.applyFrom(airportTo)
                 view.applyTo(airportFrom)
             }
+    }
+
+    fun addAdult(i: Int, v:EditText) {
+        if((v.text.toString().toInt() <= 1 && i == -1) || (v.text.toString().toInt() >= 4 && i == 1))
+            return
+
+        v.setText((v.text.toString().toInt() + i).toString())
     }
 
 

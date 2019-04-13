@@ -2,6 +2,7 @@ package id.djaka.flicker.ui.airport
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.djaka.flicker.R
@@ -40,6 +41,10 @@ class AirportActivity : BaseActivity<AirportPresenter>(), AirportView {
 
     override fun updateAirport(data: List<AirPort>) {
         adapter.updateAirport(data)
+    }
+
+    fun back(v:View?){
+        onBackPressed()
     }
 
 

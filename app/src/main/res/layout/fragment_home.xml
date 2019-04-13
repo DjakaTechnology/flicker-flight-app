@@ -344,9 +344,11 @@
                             style="@style/Base.Widget.AppCompat.Button.Borderless"
                             android:background="@color/white"
                             android:text="-"
+                            android:clickable="true"
                             app:layout_constraintBottom_toBottomOf="@+id/et_adult"
                             app:layout_constraintStart_toStartOf="@+id/et_adult"
-                            app:layout_constraintTop_toTopOf="@+id/et_adult" />
+                            app:layout_constraintTop_toTopOf="@+id/et_adult"
+                            android:focusable="true" />
 
                         <Button
                             android:id="@+id/btn_increase_adult"

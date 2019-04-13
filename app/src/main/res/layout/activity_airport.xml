@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_medium"
                 android:paddingBottom="32dp"
+                android:onClick="back"
                 android:text="Kemana ?"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
