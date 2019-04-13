@@ -72,8 +72,8 @@
                     android:rotation="180"
                     app:layout_constraintBottom_toTopOf="@+id/textView44"
                     app:layout_constraintEnd_toStartOf="@+id/tv_current_pos2"
-                    app:layout_constraintStart_toEndOf="@+id/tv_current_pos"
-                    app:layout_constraintTop_toTopOf="@+id/tv_current_pos"
+                    app:layout_constraintStart_toEndOf="@+id/tv_from_airport"
+                    app:layout_constraintTop_toTopOf="@+id/tv_from_airport"
                     app:srcCompat="@drawable/ic_right_arrow_black" />
 
                 <TextView
@@ -84,7 +84,7 @@
                     android:text="Yogyakarta"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_current_pos" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_from_airport" />
 
                 <TextView
                     android:id="@+id/tv_current_pos2"
@@ -98,17 +98,17 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tv_from_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_regular"
                     android:text="Yogyakarta"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/tv_current_pos"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_current_pos" />
+                    app:layout_constraintStart_toStartOf="@+id/tv_from_airport"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_from_airport" />
 
                 <TextView
-                    android:id="@+id/tv_current_pos"
+                    android:id="@+id/tv_from_airport"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_demi"
@@ -125,7 +125,7 @@
                     android:layout_weight="1"
                     app:columnCount="2"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_from_city"
                     >
 
                     <TextView

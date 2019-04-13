@@ -32,11 +32,11 @@ class AirportActivity : BaseActivity<AirportPresenter>(), AirportView {
         rv_airport.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.options_menu, menu)
-
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.options_menu, menu)
+//
+//        return true
+//    }
 
     override fun updateAirport(data: List<AirPort>) {
         adapter.updateAirport(data)

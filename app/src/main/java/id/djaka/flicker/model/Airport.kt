@@ -1,9 +1,12 @@
 package id.djaka.flicker.model
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class AirPort(
     @Json(name = "address")
-    val address: Any? = Any(),
+    val address: String? = String(),
     @Json(name = "city")
     val city: String? = "",
     @Json(name = "code")
@@ -12,4 +15,4 @@ data class AirPort(
     val id: Int? = 0,
     @Json(name = "name")
     val name: String? = ""
-)
+) : Parcelable

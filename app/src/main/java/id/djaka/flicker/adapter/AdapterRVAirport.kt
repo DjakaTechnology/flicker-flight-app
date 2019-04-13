@@ -1,6 +1,8 @@
 package id.djaka.flicker.adapter
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +21,13 @@ class AdapterRVAirport(private val context: Context) : RecyclerView.Adapter<Adap
         holder.itemView.tv_name.text = data[position].name
         holder.itemView.tv_city.text = data[position].city
         holder.itemView.tv_code.text = data[position].code
+
+        holder.itemView.card_item.setOnClickListener {
+            val i = Intent()
+            i.putExtra("AIRPORT", data[holder.adapterPosition])
+            (context as Activity).setResult(Activity.RESULT_OK, i)
+            context.finish()
+        }
     }
 
     private var data: List<AirPort> = listOf()

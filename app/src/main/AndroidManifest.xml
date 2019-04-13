@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.airport.AirportActivity" android:theme="@style/ActionBar"></activity>
+        <activity android:name=".ui.airport.AirportActivity"></activity>
         <activity android:name=".SeatActivity" />
         <activity android:name=".ui.paymentActivity.PaymentActivity" />
         <activity android:name=".ui.paymentChooseActivity.PaymentChooseActivity" />
