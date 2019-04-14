@@ -6,6 +6,7 @@ import id.djaka.flicker.base.BaseView
 import id.djaka.flicker.injection.module.ContextModule
 import id.djaka.flicker.injection.module.NetworkModule
 import id.djaka.flicker.ui.airport.AirportPresenter
+import id.djaka.flicker.ui.search.SearchPresenter
 import javax.inject.Singleton
 
 @Singleton
@@ -13,6 +14,7 @@ import javax.inject.Singleton
 interface PresenterInjection{
 
     fun inject(airportPresenter: AirportPresenter)
+    fun inject(searchPresenter: SearchPresenter)
 
     @Component.Builder
     interface Builder{

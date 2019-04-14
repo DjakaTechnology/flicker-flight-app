@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     tools:context=".ui.search.SearchActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -135,13 +137,13 @@
                     app:layout_constraintTop_toTopOf="@+id/tv_to"
                     app:srcCompat="@drawable/ic_right_arrow_white" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <include android:layout_width="match_parent"  layout="@layout/rv_ticket_search"
-                android:layout_height="wrap_content" />
-            <include layout="@layout/rv_ticket_search"/>
-            <include layout="@layout/rv_ticket_search"/>
-            <include layout="@layout/rv_ticket_search"/>
-            <include layout="@layout/rv_ticket_search"/>
-            <include layout="@layout/rv_ticket_search"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:id="@+id/rv_route"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
     </FrameLayout>

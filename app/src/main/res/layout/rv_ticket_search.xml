@@ -30,14 +30,14 @@
                 app:srcCompat="@drawable/square_red" />
 
             <ImageView
-                android:id="@+id/imgAccent2"
+                android:id="@+id/img_logo"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="24dp"
                 android:layout_marginEnd="24dp"
+                android:adjustViewBounds="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_ticket" />
 
             <androidx.gridlayout.widget.GridLayout
@@ -48,7 +48,7 @@
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
                 app:columnCount="2"
-                app:layout_constraintEnd_toStartOf="@+id/imgAccent2"
+                app:layout_constraintEnd_toStartOf="@+id/img_logo"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imgAccent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -79,7 +79,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tv_depart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_bold"
@@ -98,7 +98,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/tv_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_medium"
@@ -113,12 +113,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_regular"
                     android:paddingEnd="12dp"
-                    android:text="Time"
+                    android:text="Total Cost"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/textView16"
+                    android:id="@+id/tv_total_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_medium"

@@ -5,6 +5,7 @@ import id.djaka.flicker.injection.component.PresenterInjection
 import id.djaka.flicker.injection.module.ContextModule
 import id.djaka.flicker.injection.module.NetworkModule
 import id.djaka.flicker.ui.airport.AirportPresenter
+import id.djaka.flicker.ui.search.SearchPresenter
 
 abstract class BasePresenter<out V: BaseView>(protected val view:V){
     private val injector: PresenterInjection = DaggerPresenterInjection
@@ -26,6 +27,7 @@ abstract class BasePresenter<out V: BaseView>(protected val view:V){
     private fun inject() {
         when(this){
             is AirportPresenter -> injector.inject(this)
+            is SearchPresenter -> injector.inject(this)
         }
     }
 }

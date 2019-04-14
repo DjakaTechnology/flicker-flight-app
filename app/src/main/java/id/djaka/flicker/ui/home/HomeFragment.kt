@@ -76,7 +76,7 @@ class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
 
 
     private fun prepareOnClickAction() {
-        v.btn_search.setOnClickListener { presenter.launchSearchActivity(context, airportFrom, airportTo, et_adult.text.toString().toInt()) }
+        v.btn_search.setOnClickListener { presenter.launchSearchActivity(context, airportFrom, airportTo, et_adult.text.toString().toInt(), et_depart.text.toString()) }
         v.cl_from.setOnClickListener { presenter.launchAirportActivity(this, AIRPORT_FROM) }
         v.cl_to.setOnClickListener { presenter.launchAirportActivity(this, AIRPORT_TO) }
         v.fab_switch.setOnClickListener{presenter.switchAirport(airportFrom, airportTo)}

@@ -28,9 +28,6 @@ class AirportPresenter(airportView: AirportView) : BasePresenter<AirportView>(ai
                 }catch (ex:Exception){
                     Log.e("TAG", ex.message)
                 }
-
-
-
             }
         }
     }

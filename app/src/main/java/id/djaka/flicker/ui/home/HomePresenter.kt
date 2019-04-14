@@ -21,11 +21,12 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView){
         super.onViewCreated()
     }
 
-    fun launchSearchActivity(c:Context, airportFrom: AirPort?, airportTo: AirPort?, passanger:Int){
+    fun launchSearchActivity(c:Context, airportFrom: AirPort?, airportTo: AirPort?, passanger:Int, depart:String){
         val i = Intent(c, SearchActivity::class.java)
         i.putExtra(AIRPORT_TO.toString(), airportTo)
         i.putExtra(AIRPORT_FROM.toString(), airportFrom)
         i.putExtra("PASSANGER", passanger)
+        i.putExtra("DEPART", depart)
         c.startActivity(i)
     }
 
@@ -35,7 +36,7 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView){
     }
 
     fun convertDateToString(c:Calendar){
-        val myFormat = "MM/dd/yy" //In which you need put here
+        val myFormat = "yyy-MM-dd" //In which you need put here
         val sdf = SimpleDateFormat(myFormat, Locale.US)
 
         view.updateDepart(sdf.format(c.time))
