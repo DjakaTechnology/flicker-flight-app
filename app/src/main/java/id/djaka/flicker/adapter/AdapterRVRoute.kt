@@ -3,6 +3,7 @@ package id.djaka.flicker.adapter
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,8 @@ class AdapterRVRoute(private val context: Context) : RecyclerView.Adapter<Adapte
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.itemView.tv_cost.text = "Rp."+ data[position].price
-        holder.itemView.tv_depart.text = data[position].departAt
+        holder.itemView.tv_depart.text = data[position].departAt!!.hours.toString() + ":" + data[position].departAt!!.minutes.toString() +" - "+
+                data[position].arrivedAt!!.hours.toString() + ":" + data[position].arrivedAt!!.minutes.toString()
         holder.itemView.tv_total_cost.text = "Rp."+ (data[position].price!! * passanger)
         Glide.with(context).load(data[position].plane!!.airline!!.logo).into(holder.itemView.img_logo)
 

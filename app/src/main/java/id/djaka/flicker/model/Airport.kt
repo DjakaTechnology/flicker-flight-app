@@ -1,64 +1,68 @@
 package id.djaka.flicker.model
 import android.os.Parcelable
-import com.squareup.moshi.Json
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 data class AirPort(
-    @Json(name = "address")
+    @SerializedName( "address")
     val address: String? = String(),
-    @Json(name = "city")
+    @SerializedName( "city")
     val city: String? = "",
-    @Json(name = "code")
+    @SerializedName( "code")
     val code: String? = "",
-    @Json(name = "id")
+    @SerializedName( "id")
     val id: Int? = 0,
-    @Json(name = "name")
+    @SerializedName( "name")
     val name: String? = ""
 ) : Parcelable
 
 @Parcelize
-data class Route(
-    @Json(name = "airport_from_id")
-    val airportFromId: Int? = 0,
-    @Json(name = "airport_to_id")
-    val airportToId: Int? = 0,
-    @Json(name = "depart_at")
-    val departAt: String = "",
-    @Json(name = "id")
-    val id: Int? = 0,
-    @Json(name = "plane")
-    val plane: Plane? = Plane(),
-    @Json(name = "plane_id")
-    val planeId: Int? = 0,
-    @Json(name = "price")
-    val price: Int? = 0
-) : Parcelable
-
-@Parcelize
 data class Plane(
-    @Json(name = "airline")
+    @SerializedName( "airline")
     val airline: Airline? = Airline(),
-    @Json(name = "airline_id")
+    @SerializedName( "airline_id")
     val airlineId: Int? = 0,
-    @Json(name = "code")
+    @SerializedName( "code")
     val code: String? = "",
-    @Json(name = "id")
+    @SerializedName( "id")
     val id: Int? = 0,
-    @Json(name = "seat_column")
+    @SerializedName( "seat_column")
     val seatColumn: Int? = 0,
-    @Json(name = "seat_row")
+    @SerializedName( "seat_row")
     val seatRow: Int? = 0
 ) : Parcelable
 
 @Parcelize
 data class Airline(
-    @Json(name = "description")
+    @SerializedName( "description")
     val description: String? = "",
-    @Json(name = "id")
+    @SerializedName( "id")
     val id: Int? = 0,
-    @Json(name = "logo")
+    @SerializedName( "logo")
     val logo: String? = "",
-    @Json(name = "name")
+    @SerializedName( "name")
     val name: String? = ""
 ) : Parcelable
+
+
+@Parcelize
+data class Route(
+    @SerializedName( "airport_from_id")
+    val airportFromId: Int? = 0,
+    @SerializedName( "airport_to_id")
+    val airportToId: Int? = 0,
+    @SerializedName( "arrived_at")
+    val arrivedAt: Date? = Date(),
+    @SerializedName("depart_at")
+    val departAt: Date? = Date(),
+    @SerializedName( "id")
+    val id: Int? = 0,
+    @SerializedName( "plane")
+    val plane: Plane? = Plane(),
+    @SerializedName( "plane_id")
+    val planeId: Int? = 0,
+    @SerializedName( "price")
+    val price: Int? = 0
+):Parcelable

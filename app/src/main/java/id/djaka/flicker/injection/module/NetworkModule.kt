@@ -10,13 +10,22 @@ import id.djaka.flicker.util.BASE_URL
 import id.djaka.flicker.util.SharedKey
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import com.google.gson.GsonBuilder
+import com.google.gson.Gson
+
+
 
 @Module
 @Suppress("unused")
 object NetworkModule {
     @Provides @Reusable @JvmStatic
     internal  fun provideRetrofitInterface(c:Context): Retrofit{
+        val gson = GsonBuilder()
+            .setDateFormat("yyyy-MM-dd HH:mm:ss")
+            .create()
+
         val pref = c.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE)
         val client = OkHttpClient.Builder().addInterceptor { chain ->
             val newRequest = chain.request().newBuilder()
@@ -28,7 +37,7 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
