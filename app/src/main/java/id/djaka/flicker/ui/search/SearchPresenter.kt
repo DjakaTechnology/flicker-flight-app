@@ -3,7 +3,7 @@ package id.djaka.flicker.ui.search
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import id.djaka.flicker.ui.detailOrder.DetailOrderActivity
+import id.djaka.flicker.ui.detail_order.DetailOrderActivity
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.injection.network.ApiServices
 import id.djaka.flicker.model.AirPort

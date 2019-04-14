@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.detailOrder.DetailOrderActivity"
+    tools:context=".ui.detail_order.DetailOrderActivity"
     android:fillViewport="true">
 
     <LinearLayout
@@ -59,7 +59,6 @@
                 layout="@layout/rv_price_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
 
             <LinearLayout
                 android:paddingTop="12dp"

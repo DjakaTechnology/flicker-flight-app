@@ -17,7 +17,7 @@
         <activity android:name=".ui.paymentActivity.PaymentActivity" />
         <activity android:name=".ui.paymentChooseActivity.PaymentChooseActivity" />
         <activity android:name=".ui.detailOrderContact.DetailOrderContactActivity" />
-        <activity android:name=".ui.detailOrder.DetailOrderActivity" />
+        <activity android:name=".ui.detail_order.DetailOrderActivity" />
         <activity android:name=".ui.search.SearchActivity" />
         <activity
             android:name=".ui.main.MainActivity"

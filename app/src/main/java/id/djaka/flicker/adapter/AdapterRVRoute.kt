@@ -1,9 +1,7 @@
 package id.djaka.flicker.adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.djaka.flicker.R
 import id.djaka.flicker.model.Route
-import id.djaka.flicker.ui.detailOrder.DetailOrderActivity
+import id.djaka.flicker.ui.detail_order.DetailOrderActivity
 import id.djaka.flicker.util.ROUTE
 import kotlinx.android.synthetic.main.rv_ticket_search.view.*
 

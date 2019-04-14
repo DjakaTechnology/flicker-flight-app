@@ -46,23 +46,26 @@ data class Airline(
     val name: String? = ""
 ) : Parcelable
 
-
 @Parcelize
 data class Route(
-    @SerializedName( "airport_from_id")
+    @SerializedName("airport_from")
+    val airportFrom: AirPort? = AirPort(),
+    @SerializedName("airport_from_id")
     val airportFromId: Int? = 0,
-    @SerializedName( "airport_to_id")
+    @SerializedName("airport_to")
+    val airportTo: AirPort? = AirPort(),
+    @SerializedName("airport_to_id")
     val airportToId: Int? = 0,
-    @SerializedName( "arrived_at")
+    @SerializedName("arrived_at")
     val arrivedAt: Date? = Date(),
     @SerializedName("depart_at")
     val departAt: Date? = Date(),
-    @SerializedName( "id")
+    @SerializedName("id")
     val id: Int? = 0,
-    @SerializedName( "plane")
+    @SerializedName("plane")
     val plane: Plane? = Plane(),
-    @SerializedName( "plane_id")
+    @SerializedName("plane_id")
     val planeId: Int? = 0,
-    @SerializedName( "price")
+    @SerializedName("price")
     val price: Int? = 0
-):Parcelable
+) : Parcelable

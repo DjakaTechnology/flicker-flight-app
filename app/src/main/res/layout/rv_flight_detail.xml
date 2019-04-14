@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_depart_city3"
+        android:id="@+id/tv_to_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -16,8 +16,8 @@
         android:text="05:11"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_destination_airport"
-        app:layout_constraintTop_toBottomOf="@+id/tv_destination_city" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_to_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_to_city" />
 
     <TextView
         android:id="@+id/tv_depart"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_depart_airport"
+        android:id="@+id/tv_from_airport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -53,10 +53,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/black_sub"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_depart_airport"
-        app:layout_constraintEnd_toStartOf="@+id/tv_destination_airport"
-        app:layout_constraintStart_toEndOf="@+id/tv_depart_airport"
-        app:layout_constraintTop_toTopOf="@+id/tv_destination_airport" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_from_airport"
+        app:layout_constraintEnd_toStartOf="@+id/tv_to_airport"
+        app:layout_constraintStart_toEndOf="@+id/tv_from_airport"
+        app:layout_constraintTop_toTopOf="@+id/tv_to_airport" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -70,7 +70,7 @@
         app:srcCompat="@drawable/ic_circle" />
 
     <TextView
-        android:id="@+id/tv_destination_airport"
+        android:id="@+id/tv_to_airport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_depart" />
 
     <TextView
-        android:id="@+id/tv_depart_city"
+        android:id="@+id/tv_from_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenir_regular"
@@ -92,11 +92,11 @@
         android:text="Yogyakarta"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_depart_airport"
-        app:layout_constraintTop_toBottomOf="@+id/tv_depart_airport" />
+        app:layout_constraintStart_toStartOf="@+id/tv_from_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_from_airport" />
 
     <TextView
-        android:id="@+id/tv_depart_city5"
+        android:id="@+id/tv_plane"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -107,11 +107,11 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_depart_airport"
-        app:layout_constraintTop_toBottomOf="@+id/tv_depart_city2" />
+        app:layout_constraintStart_toStartOf="@+id/tv_from_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_from_time" />
 
     <TextView
-        android:id="@+id/tv_depart_city4"
+        android:id="@+id/tv_depart_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -125,7 +125,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_depart" />
 
     <TextView
-        android:id="@+id/tv_depart_city2"
+        android:id="@+id/tv_from_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -134,11 +134,11 @@
         android:text="05:11"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_depart_airport"
-        app:layout_constraintTop_toBottomOf="@+id/tv_depart_city" />
+        app:layout_constraintStart_toStartOf="@+id/tv_from_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_from_city" />
 
     <TextView
-        android:id="@+id/tv_destination_city"
+        android:id="@+id/tv_to_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenir_regular"
@@ -146,17 +146,17 @@
         android:text="Denpasar Bali"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_destination_airport"
-        app:layout_constraintTop_toBottomOf="@+id/tv_destination_airport" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_to_airport"
+        app:layout_constraintTop_toBottomOf="@+id/tv_to_airport" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/img_airline"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_depart_city5"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_plane"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_depart_city5"
+        app:layout_constraintTop_toTopOf="@+id/tv_plane"
         app:srcCompat="@drawable/ic_profile" />
 </androidx.constraintlayout.widget.ConstraintLayout>
