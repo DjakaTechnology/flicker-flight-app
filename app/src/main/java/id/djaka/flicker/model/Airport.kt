@@ -69,3 +69,31 @@ data class Route(
     @SerializedName("price")
     val price: Int? = 0
 ) : Parcelable
+
+data class User(
+    @SerializedName("address")
+    val address: String? = "",
+    @SerializedName("birthdate")
+    val birthdate: String? = "",
+    @SerializedName("email")
+    val email: String? = "",
+    @SerializedName("gender")
+    val gender: Gender? = Gender(),
+    @SerializedName("gender_id")
+    val genderId: Int? = 0,
+    @SerializedName("id")
+    val id: Int? = 0,
+    @SerializedName("name")
+    val name: String? = "",
+    @SerializedName("phone")
+    val phone: String? = "",
+    @SerializedName("token")
+    val token: String? = ""
+)
+
+data class Gender(
+    @SerializedName("id")
+    val id: Int? = 0,
+    @SerializedName("name")
+    val name: String? = ""
+)

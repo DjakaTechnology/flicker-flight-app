@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="24dp"
-    tools:context=".LoginActivity"
+    tools:context=".ui.login.LoginActivity"
     android:orientation="vertical">
 
 
@@ -32,16 +32,13 @@
         android:textSize="12sp" />
 
     <EditText
-        android:id="@+id/et_depart2"
+        android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:background="@drawable/bg_et"
-
-        android:clickable="true"
         android:drawablePadding="12dp"
         android:ems="10"
-        android:focusable="false"
         android:fontFamily="@font/avenir_medium"
         android:hint="Masukkan email anda"
         android:inputType="textPersonName"
@@ -66,17 +63,14 @@
         android:textSize="12sp" />
 
     <EditText
-        android:id="@+id/et_depart3"
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_weight="1"
-
         android:background="@drawable/bg_et"
-        android:clickable="true"
         android:drawablePadding="12dp"
         android:ems="10"
-        android:focusable="false"
         android:fontFamily="@font/avenir_medium"
         android:hint="Masukkan password"
         android:inputType="textPassword"

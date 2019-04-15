@@ -1,5 +1,10 @@
 package id.djaka.flicker.util
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import com.google.gson.Gson
+import id.djaka.flicker.model.User
+
 object SharedKey {
     object Session {
         var SESSION = "USER_SESSION_MODEL"
@@ -27,5 +32,14 @@ object SharedKey {
 
     object Result{
         var MESSAGE = "MESSAGE"
+    }
+
+    fun getUserModel(c: Context): User? {
+        val pref = c.getSharedPreferences(Session.SESSION, MODE_PRIVATE)
+        return try {
+            Gson().fromJson<User>(pref.getString(Session.USER, null), User::class.java)
+        } catch (e: Exception) {
+            null
+        }
     }
 }

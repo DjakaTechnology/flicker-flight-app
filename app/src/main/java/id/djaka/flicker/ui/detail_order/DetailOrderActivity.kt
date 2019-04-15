@@ -5,6 +5,7 @@ import com.bumptech.glide.Glide
 import id.djaka.flicker.R
 import id.djaka.flicker.base.BaseActivity
 import id.djaka.flicker.model.Route
+import id.djaka.flicker.util.SharedKey
 import id.djaka.flicker.util.Utill
 import kotlinx.android.synthetic.main.activity_detail_order.*
 import kotlinx.android.synthetic.main.rv_flight_detail.*
@@ -30,7 +31,7 @@ class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderVie
     }
 
     private fun prepareBtn() {
-        btn_order.setOnClickListener { presenter.launchDetailContact(this) }
+        btn_order.setOnClickListener { presenter.launchOrder(this) }
     }
 
     override fun onDestroy() {

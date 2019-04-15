@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.airport.AirportActivity" />
         <activity android:name=".SeatActivity" />
         <activity android:name=".ui.payment_activity.PaymentActivity" />

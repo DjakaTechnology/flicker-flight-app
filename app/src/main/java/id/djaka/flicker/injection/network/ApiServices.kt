@@ -2,9 +2,9 @@ package id.djaka.flicker.injection.network
 
 import id.djaka.flicker.model.AirPort
 import id.djaka.flicker.model.Route
+import id.djaka.flicker.model.User
 import kotlinx.coroutines.Deferred
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiServices {
     /**
@@ -18,4 +18,9 @@ interface ApiServices {
                  @Path("to")to:Int,
                  @Path("depart")depart:String
     ):Deferred<List<Route>>
+
+    @POST("login")
+    @FormUrlEncoded
+    fun login(@Field("email")email:String,
+              @Field("password")password:String):Deferred<User>
 }
