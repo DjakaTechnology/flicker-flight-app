@@ -1,4 +1,4 @@
-package id.djaka.flicker.ui.paymentActivity
+package id.djaka.flicker.ui.payment_activity
 
 import id.djaka.flicker.base.BasePresenter
 

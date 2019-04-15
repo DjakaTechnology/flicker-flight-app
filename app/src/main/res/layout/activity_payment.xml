@@ -5,7 +5,7 @@
     android:background="@color/white_darker"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.paymentActivity.PaymentActivity">
+    tools:context=".ui.payment_activity.PaymentActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

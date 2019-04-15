@@ -2,7 +2,7 @@ package id.djaka.flicker.ui.detail_order
 
 import android.content.Context
 import android.content.Intent
-import id.djaka.flicker.ui.detailOrderContact.DetailOrderContactActivity
+import id.djaka.flicker.ui.detail_order_contact.DetailOrderContactActivity
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.model.Route
 import id.djaka.flicker.util.ROUTE

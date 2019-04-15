@@ -1,4 +1,4 @@
-package id.djaka.flicker.ui.detailOrderContact
+package id.djaka.flicker.ui.detail_order_contact
 
 import android.os.Bundle
 import id.djaka.flicker.R

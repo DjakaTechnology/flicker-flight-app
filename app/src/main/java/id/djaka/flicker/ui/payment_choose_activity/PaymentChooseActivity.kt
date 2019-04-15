@@ -1,4 +1,4 @@
-package id.djaka.flicker.ui.paymentChooseActivity
+package id.djaka.flicker.ui.payment_choose_activity
 
 import android.os.Bundle
 import id.djaka.flicker.R
