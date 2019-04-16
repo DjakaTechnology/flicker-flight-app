@@ -40,7 +40,7 @@ class LoginPresenter(loginView: LoginView) : BasePresenter<LoginView>(loginView)
                 dialog!!.dismiss()
                 try {
                     model = request.await()
-                    putSharedPreferences(c, Gson().toJson(request))
+                    putSharedPreferences(c, Gson().toJson(model))
                 }catch (ex: Exception){
                     showAlert(c, "Email atau Password Salah", "Email atau Password anda salah silahkan coba lagi")
                 }
@@ -62,7 +62,8 @@ class LoginPresenter(loginView: LoginView) : BasePresenter<LoginView>(loginView)
     private fun startMainActivity(c:Context) {
 //        val i = Intent(c, MainActivity::class.java)
 //        c.startActivity(i)
-        view.finishActivity()
+        (c as Activity).setResult(Activity.RESULT_OK)
+        c.finish()
     }
 
     fun showAlert(c: Context, title:String, message:String) {

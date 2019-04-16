@@ -16,9 +16,9 @@
         </item>
     </style>
     <style name="spinnerDropDownItemStyle">
-        <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">@font/avenir_demi</item>
-        <item name="android:textColor">@color/black_main</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/avenir_medium</item>
+        <item name="android:textColor">@color/black_sub</item>
     </style>
     <style name="ActionBar" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>

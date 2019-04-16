@@ -1,5 +1,7 @@
 package id.djaka.flicker.ui.detail_order
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import id.djaka.flicker.R
@@ -14,7 +16,7 @@ import kotlinx.android.synthetic.main.rv_price_item.*
 class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderView {
     override fun updatePriceDetail(data: Route?) {
         tv_airline.text = "Pergi (" + data!!.plane!!.airline!!.name
-        tv_price.text = "Rp." + data!!.price
+        tv_price.text = "Rp." + data!!.price!! * SharedKey.getPassanger(this)
         tv_total_price.text = "Rp. " + data!!.price
     }
 
@@ -41,7 +43,7 @@ class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderVie
 
     override fun updateFlightDetail(route: Route?) {
         tv_depart_date.text = Utill.dateToShortDate(route!!.departAt!!)
-        tv_from_airport.text = route.airportFrom!!.code
+        tv_from_code.text = route.airportFrom!!.code
         tv_from_city.text = route.airportFrom!!.city
         tv_from_time.text = route.departAt!!.hours.toString() + ":" + route.departAt!!.minutes.toString()
 
@@ -52,5 +54,11 @@ class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderVie
         tv_plane.text = route.plane!!.code
 
         Glide.with(this).load(route.plane.airline!!.logo).into(img_airline)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK)
+            btn_order.performClick()
     }
 }

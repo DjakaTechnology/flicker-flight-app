@@ -22,7 +22,17 @@ class SearchPresenter(searchView: SearchView) : BasePresenter<SearchView>(search
     fun onViewCreated(i:Intent) {
         super.onViewCreated()
 
+        updateText(i)
         loadRoute(i)
+    }
+
+    private fun updateText(i:Intent){
+        view.updateText(
+            i.getParcelableExtra<AirPort>(AIRPORT_FROM.toString()),
+            i.getParcelableExtra<AirPort>(AIRPORT_TO.toString()),
+            i.getStringExtra("DEPART"),
+            i.getIntExtra("PASSANGER", 1)
+            )
     }
 
     private fun loadRoute(i: Intent) {

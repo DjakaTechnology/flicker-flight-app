@@ -12,6 +12,8 @@ import id.djaka.flicker.model.AirPort
 import id.djaka.flicker.ui.airport.AirportActivity
 import id.djaka.flicker.util.AIRPORT_FROM
 import id.djaka.flicker.util.AIRPORT_TO
+import id.djaka.flicker.util.PASSANGERS
+import id.djaka.flicker.util.SharedKey
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,6 +29,8 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView){
         i.putExtra(AIRPORT_FROM.toString(), airportFrom)
         i.putExtra("PASSANGER", passanger)
         i.putExtra("DEPART", depart)
+
+        putSharedPreferences(c, passanger)
         c.startActivity(i)
     }
 
@@ -63,6 +67,13 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView){
             return
 
         v.setText((v.text.toString().toInt() + i).toString())
+    }
+
+    private fun putSharedPreferences(c:Context, passanger: Int) {
+        val editor = c.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE).edit()
+
+        editor.putInt(PASSANGERS.toString(), passanger)
+        editor.apply()
     }
 
 

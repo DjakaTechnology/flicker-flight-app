@@ -132,11 +132,11 @@
                             android:fontFamily="@font/avenir_regular"
                             android:text="Pilih Bandara"
                             android:textSize="12sp"
-                            app:layout_constraintStart_toStartOf="@+id/tv_from_airport"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_from_airport" />
+                            app:layout_constraintStart_toStartOf="@+id/tv_from_code"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_from_code" />
 
                         <TextView
-                            android:id="@+id/tv_from_airport"
+                            android:id="@+id/tv_from_code"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/avenir_demi"

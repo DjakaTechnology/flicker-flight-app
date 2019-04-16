@@ -15,7 +15,7 @@
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.airport.AirportActivity" />
-        <activity android:name=".SeatActivity" />
+        <activity android:name=".ui.seat.SeatActivity" />
         <activity android:name=".ui.payment_activity.PaymentActivity" />
         <activity android:name=".ui.payment_choose_activity.PaymentChooseActivity" />
         <activity android:name=".ui.detail_order_contact.DetailOrderContactActivity" />

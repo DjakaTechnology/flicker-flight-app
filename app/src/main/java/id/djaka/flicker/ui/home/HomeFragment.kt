@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
     }
 
     override fun applyFrom(airport: AirPort) {
-        v.tv_from_airport.text = airport.code
+        v.tv_from_code.text = airport.code
         v.tv_from_city.text = airport.city
 
         airportFrom = airport

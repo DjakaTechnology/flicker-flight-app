@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.gson.Gson
 import id.djaka.flicker.R
 import id.djaka.flicker.model.Route
 import id.djaka.flicker.ui.detail_order.DetailOrderActivity
 import id.djaka.flicker.util.ROUTE
+import id.djaka.flicker.util.SharedKey
 import kotlinx.android.synthetic.main.rv_ticket_search.view.*
 
 class AdapterRVRoute(private val context: Context) : RecyclerView.Adapter<AdapterRVRoute.PostViewHolder>() {
@@ -29,8 +31,16 @@ class AdapterRVRoute(private val context: Context) : RecyclerView.Adapter<Adapte
         holder.itemView.card_item.setOnClickListener {
             val i = Intent(context, DetailOrderActivity::class.java)
             i.putExtra(ROUTE, data[holder.adapterPosition])
+            putSharedPreferences(context, Gson().toJson(data[holder.adapterPosition]))
             context.startActivity(i)
         }
+    }
+
+    private fun putSharedPreferences(c:Context, json: String) {
+        val editor = c.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE).edit()
+
+        editor.putString(ROUTE, json)
+        editor.apply()
     }
 
     private var data: List<Route> = listOf()

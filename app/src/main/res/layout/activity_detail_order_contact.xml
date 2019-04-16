@@ -38,25 +38,24 @@
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/avenir_medium"
-                android:text="Title"
+                android:text="Jenis Kelamin"
                 android:textColor="@color/black_sub"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/et_title"
+            <Spinner
+                android:id="@+id/sp_gender"
+                style="@style/spinnerDropDownItemStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/bg_et"
-                android:ems="10"
+                android:entries="@array/gender"
                 android:fontFamily="@font/avenir_medium"
-                android:hint="Tuan / Nyonya ?"
-                android:inputType="textPersonName"
                 android:paddingStart="18dp"
                 android:paddingTop="12dp"
                 android:paddingEnd="18dp"
                 android:paddingBottom="12dp"
-                android:textColor="@color/black_sub"
-                android:textSize="14sp" />
+                android:spinnerMode="dropdown" />
 
             <TextView
                 android:id="@+id/textView18"
@@ -71,7 +70,7 @@
                 android:textSize="12sp" />
 
             <EditText
-                android:id="@+id/et_title3"
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -100,7 +99,7 @@
                 android:textSize="12sp" />
 
             <EditText
-                android:id="@+id/et_title4"
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -129,7 +128,7 @@
                 android:textSize="12sp" />
 
             <EditText
-                android:id="@+id/et_title5"
+                android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -143,8 +142,7 @@
                 android:paddingEnd="18dp"
                 android:paddingBottom="12dp"
                 android:textColor="@color/black_sub"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -160,24 +158,28 @@
 
             <TextView
                 android:id="@+id/textView21"
-                android:layout_marginBottom="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/avenir_bold"
-                android:text="Kontak yang Dapat Dihubungi"
+                android:text="Data Penumpang"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
-            <include layout="@layout/rv_passanger_contact"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_passanger"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
             <Button
-                android:id="@+id/btn_pay"
+                android:id="@+id/btn_seat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_btn_primary"
-                android:text="Bayar"
+                android:text="Pilih Kursi"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
         </LinearLayout>

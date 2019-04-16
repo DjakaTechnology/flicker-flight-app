@@ -97,3 +97,13 @@ data class Gender(
     @SerializedName("name")
     val name: String? = ""
 )
+
+@Parcelize
+data class Passanger(
+    @SerializedName("gender_id")
+    var genderId: Int? = 0,
+    @SerializedName("name")
+    var name: String? = "",
+    @SerializedName("seat_code")
+    var seatCode: String? = ""
+) : Parcelable

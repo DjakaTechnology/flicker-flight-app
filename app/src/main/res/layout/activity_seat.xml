@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeatActivity">
+    tools:context=".ui.seat.SeatActivity">
 
     <androidx.gridlayout.widget.GridLayout
         android:layout_marginTop="24dp"
@@ -14,86 +14,7 @@
         app:columnCount="3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:rowCount="2">
-
-        <TextView
-            android:id="@+id/textView37"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/avenir_demi"
-            android:textAlignment="center"
-            app:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:id="@+id/textView33"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/avenir_demi"
-            android:text="A"
-            android:textAlignment="center"
-            android:textColor="@color/black_main"
-            app:layout_gravity="center" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/avenir_demi"
-            android:text="B"
-            android:textAlignment="center"
-            android:textColor="@color/black_main"
-            app:layout_gravity="center" />
-
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/avenir_demi"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="@color/black_main"
-            app:layout_gravity="center" />
-
-        <FrameLayout
-            android:id="@+id/button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="6dp"
-            android:background="@drawable/ic_seat"
-            android:backgroundTint="@color/red"
-            android:text="1"
-            android:textColor="@color/white">
-
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/avenir_demi"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="6dp"
-            android:background="@drawable/ic_seat"
-            android:text="1"
-            android:textColor="@color/white" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/avenir_demi"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-        </FrameLayout>
-
-    </androidx.gridlayout.widget.GridLayout>
+        app:rowCount="2"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -109,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btn_pay"
+            android:id="@+id/btn_seat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

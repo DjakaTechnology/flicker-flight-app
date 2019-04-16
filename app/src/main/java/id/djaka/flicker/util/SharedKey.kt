@@ -3,6 +3,7 @@ package id.djaka.flicker.util
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import com.google.gson.Gson
+import id.djaka.flicker.model.Route
 import id.djaka.flicker.model.User
 
 object SharedKey {
@@ -38,6 +39,20 @@ object SharedKey {
         val pref = c.getSharedPreferences(Session.SESSION, MODE_PRIVATE)
         return try {
             Gson().fromJson<User>(pref.getString(Session.USER, null), User::class.java)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    fun getPassanger(c: Context): Int {
+        val pref = c.getSharedPreferences(Session.SESSION, MODE_PRIVATE)
+        return pref.getInt(PASSANGERS.toString(), 1)
+    }
+
+    fun getRoute(c: Context): Route? {
+        val pref = c.getSharedPreferences(Session.SESSION, MODE_PRIVATE)
+        return try {
+            Gson().fromJson<Route>(pref.getString(ROUTE, null), Route::class.java)
         } catch (e: Exception) {
             null
         }

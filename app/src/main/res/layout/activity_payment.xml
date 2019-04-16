@@ -106,7 +106,7 @@
                 android:background="@color/black_sub"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_to_airport"
-                app:layout_constraintStart_toEndOf="@+id/tv_from_airport" />
+                app:layout_constraintStart_toEndOf="@+id/tv_from_code" />
 
             <FrameLayout
                 android:id="@+id/fl_payment_ib"
@@ -164,7 +164,7 @@
                 android:background="@color/black_sub"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_to_airport"
-                app:layout_constraintStart_toEndOf="@+id/tv_from_airport" />
+                app:layout_constraintStart_toEndOf="@+id/tv_from_code" />
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -193,7 +193,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btn_pay"
+            android:id="@+id/btn_seat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

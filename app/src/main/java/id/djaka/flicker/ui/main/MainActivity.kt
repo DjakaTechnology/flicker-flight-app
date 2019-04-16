@@ -1,10 +1,13 @@
 package id.djaka.flicker.ui.main
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import id.djaka.flicker.R
 import id.djaka.flicker.base.BaseActivity
+import id.djaka.flicker.util.SharedKey
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainPresenter>(), MainView {
@@ -15,6 +18,8 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         setContentView(R.layout.activity_main)
 
         presenter.onViewCreated()
+        val pref:SharedPreferences = this.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE)
+        pref.edit().clear().apply()
     }
 
     override fun instantiatePresenter(): MainPresenter {

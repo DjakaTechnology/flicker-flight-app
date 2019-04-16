@@ -7,42 +7,42 @@
 
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="@font/avenir_bold"
+        android:paddingTop="24dp"
         android:text="Dewasa 1"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_between_form"
         android:layout_marginBottom="6dp"
         android:layout_weight="1"
         android:fontFamily="@font/avenir_medium"
-        android:text="Title"
+        android:text="Jenis Kelamin"
         android:textColor="@color/black_sub"
         android:textSize="12sp" />
 
-    <EditText
-        android:id="@+id/et_title"
+    <Spinner
+        android:id="@+id/sp_gender"
+        style="@style/spinnerDropDownItemStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@drawable/bg_et"
-        android:ems="10"
+        android:entries="@array/gender"
         android:fontFamily="@font/avenir_medium"
-        android:hint="Tuan / Nyonya ?"
-        android:inputType="textPersonName"
         android:paddingStart="18dp"
         android:paddingTop="12dp"
         android:paddingEnd="18dp"
         android:paddingBottom="12dp"
-        android:textColor="@color/black_sub"
-        android:textSize="14sp"
-        />
+        android:spinnerMode="dropdown" />
 
     <TextView
         android:id="@+id/textView18"
@@ -57,7 +57,7 @@
         android:textSize="12sp" />
 
     <EditText
-        android:id="@+id/et_title3"
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
