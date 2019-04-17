@@ -2,6 +2,9 @@ package id.djaka.flicker.injection.network
 
 import id.djaka.flicker.model.*
 import kotlinx.coroutines.Deferred
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiServices {
@@ -44,4 +47,9 @@ interface ApiServices {
                  @Field("birthdate")birthdate:String,
                  @Field("gender_id")genderId: Int,
                  @Field("phone")phone:String):Deferred<User>
+
+    @Multipart
+    @POST("reservation/upload")
+    fun uploadImg(@Part("id") id: RequestBody,
+                  @Part img: MultipartBody.Part): Deferred<Response<Reservation>>
 }

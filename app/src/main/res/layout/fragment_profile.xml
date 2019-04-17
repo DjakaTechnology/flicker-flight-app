@@ -218,7 +218,7 @@
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/avenir_medium"
-                android:text="Berangkat kapan?"
+                android:text="Tanggal lahir"
                 android:textColor="@color/black_sub"
                 android:textSize="12sp" />
 

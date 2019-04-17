@@ -8,3 +8,4 @@ const val AIRLINE = "AIRLINE"
 const val ROUTE = "ROUTE"
 const val LOGIN = 3000
 const val PASSANGERS = 2000
+const val RESERVATION = 50000

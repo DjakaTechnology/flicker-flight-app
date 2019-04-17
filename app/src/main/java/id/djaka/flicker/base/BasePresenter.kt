@@ -6,6 +6,7 @@ import id.djaka.flicker.injection.module.ContextModule
 import id.djaka.flicker.injection.module.NetworkModule
 import id.djaka.flicker.ui.airport.AirportPresenter
 import id.djaka.flicker.ui.login.LoginPresenter
+import id.djaka.flicker.ui.payment_activity.PaymentPresenter
 import id.djaka.flicker.ui.profile.ProfilePresenter
 import id.djaka.flicker.ui.search.SearchPresenter
 import id.djaka.flicker.ui.seat.SeatPresenter
@@ -36,6 +37,7 @@ abstract class BasePresenter<out V: BaseView>(protected val view:V){
             is SeatPresenter -> injector.inject(this)
             is TicketPresenter -> injector.inject(this)
             is ProfilePresenter -> injector.inject(this )
+            is PaymentPresenter -> injector.inject(this)
         }
     }
 }

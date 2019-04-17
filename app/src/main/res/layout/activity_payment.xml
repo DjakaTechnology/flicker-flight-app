@@ -37,7 +37,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="2dp"
                 android:fontFamily="@font/avenir_regular"
-                android:text="Mandiri Virtual Account"
+                android:text="Bank Virtual Account"
                 android:textAlignment="center"
                 android:textColor="@color/black_main"
                 android:textSize="12sp" />
@@ -95,7 +95,7 @@
                 android:paddingTop="24dp"
                 android:paddingEnd="@dimen/activity_padding"
                 android:paddingBottom="8dp"
-                android:text="Panduan Pembayaran"
+                android:text="Bank Pembayaran"
                 android:textColor="@color/black_main"
                 android:textSize="18sp" />
 
@@ -167,8 +167,8 @@
                 app:layout_constraintStart_toEndOf="@+id/tv_from_code" />
 
             <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="wrap_content"
+                android:id="@+id/img_upload"
+                android:layout_width="240dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp"
@@ -176,6 +176,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/upload" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -14,6 +14,8 @@ import id.djaka.flicker.R
 import id.djaka.flicker.model.AirPort
 import id.djaka.flicker.model.Reservation
 import id.djaka.flicker.ui.detail_order.DetailOrderActivity
+import id.djaka.flicker.ui.payment_activity.PaymentActivity
+import id.djaka.flicker.util.RESERVATION
 import id.djaka.flicker.util.ROUTE
 import id.djaka.flicker.util.SharedKey
 import id.djaka.flicker.util.Utill
@@ -30,9 +32,23 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
             holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.green))
             holder.itemView.tv_status.text = data[position].status!!.name
             holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_checked))
+
+            holder.itemView.cl_card.setOnClickListener {
+                val i = Intent(context, DetailOrderActivity::class.java)
+                i.putExtra(ROUTE, data[holder.adapterPosition].route)
+                i.putExtra("HIDE", true)
+
+                putSharedPreferences(context, Gson().toJson(data[holder.adapterPosition].route))
+                context.startActivity(i) }
         }else if(data[position].statusId == 3){
             holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
             holder.itemView.tv_status.text = data[position].status!!.name
+        }else{
+            holder.itemView.cl_card.setOnClickListener {
+                val i = Intent(context, PaymentActivity::class.java)
+                i.putExtra(RESERVATION.toString(), data[holder.adapterPosition])
+                context.startActivity(i)
+            }
         }
 
         Glide.with(context).load(data[position].route!!.plane!!.airline!!.logo).into(holder.itemView.img_logo)
@@ -47,15 +63,6 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
 
         holder.itemView.tv_to_city.text = data[position].route!!.airportTo!!.city
         holder.itemView.tv_to_code.text = data[position].route!!.airportTo!!.code
-
-
-        holder.itemView.cl_card.setOnClickListener {
-            val i = Intent(context, DetailOrderActivity::class.java)
-            i.putExtra(ROUTE, data[holder.adapterPosition].route)
-            i.putExtra("HIDE", true)
-
-            putSharedPreferences(context, Gson().toJson(data[holder.adapterPosition].route))
-            context.startActivity(i) }
     }
 
     private fun putSharedPreferences(c:Context, json: String) {

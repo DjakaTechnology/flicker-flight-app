@@ -110,6 +110,7 @@ data class Passanger(
     var seatCode: String? = ""
 ) : Parcelable
 
+@Parcelize
 data class Reservation(
     @SerializedName("checkin_at")
     val checkinAt: String? = "",
@@ -144,15 +145,18 @@ data class Reservation(
     @SerializedName("seat_code")
     val seatCode: String? = "",
     @SerializedName("staff_id")
-    val staffId: Any? = Any(),
+    val staffId: Int? = 0,
     @SerializedName("status")
     val status: Status? = Status(),
     @SerializedName("status_id")
     val statusId: Int? = 0,
     @SerializedName("updated_at")
-    val updatedAt: String? = ""
-)
+    val updatedAt: String? = "",
+    @SerializedName("payment_proof")
+    val paymentProof: String? = ""
+) : Parcelable
 
+@Parcelize
 data class Customer(
     @SerializedName("address")
     val address: String? = "",
@@ -168,11 +172,12 @@ data class Customer(
     val name: String? = "",
     @SerializedName("phone")
     val phone: String? = ""
-)
+) : Parcelable
 
+@Parcelize
 data class Status(
     @SerializedName("id")
     val id: Int? = 0,
     @SerializedName("name")
     val name: String? = ""
-)
+) : Parcelable
