@@ -9,6 +9,7 @@ import id.djaka.flicker.ui.airport.AirportPresenter
 import id.djaka.flicker.ui.login.LoginPresenter
 import id.djaka.flicker.ui.search.SearchPresenter
 import id.djaka.flicker.ui.seat.SeatPresenter
+import id.djaka.flicker.ui.ticket.TicketPresenter
 import javax.inject.Singleton
 
 @Singleton
@@ -19,6 +20,7 @@ interface PresenterInjection{
     fun inject(searchPresenter: SearchPresenter)
     fun inject(loginPresenter: LoginPresenter)
     fun inject(seatPresenter: SeatPresenter)
+    fun inject(ticketPresenter: TicketPresenter)
 
     @Component.Builder
     interface Builder{

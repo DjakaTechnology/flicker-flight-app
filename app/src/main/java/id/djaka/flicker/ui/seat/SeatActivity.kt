@@ -1,7 +1,6 @@
 package id.djaka.flicker.ui.seat
 
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.djaka.flicker.R
@@ -13,6 +12,11 @@ import id.djaka.flicker.util.SharedKey
 import kotlinx.android.synthetic.main.activity_seat.*
 
 class SeatActivity : BaseActivity<SeatPresenter>(), SeatView {
+    val adapter = AdapterRVSeat(this)
+    val adapterPassanger = AdapterRVPassangerSeat(this)
+    var passangers = arrayListOf<Passanger>()
+    var currentPassangerIndex = 0
+
     override fun loadSeat(data: List<Passanger>) {
         adapter.updateSeat(SharedKey.getRoute(this)!!.plane!!, data)
 
@@ -40,11 +44,6 @@ class SeatActivity : BaseActivity<SeatPresenter>(), SeatView {
         adapterPassanger.notifyDataSetChanged()
     }
 
-    val adapter = AdapterRVSeat(this)
-    val adapterPassanger = AdapterRVPassangerSeat(this)
-    var passangers = arrayListOf<Passanger>()
-    var currentPassangerIndex = 0
-
     override fun instantiatePresenter(): SeatPresenter {
         return SeatPresenter(this)
     }
@@ -55,6 +54,11 @@ class SeatActivity : BaseActivity<SeatPresenter>(), SeatView {
 
         presenter.onViewCreated(this)
         prepareRV()
+        prepareOnClick()
+    }
+
+    private fun prepareOnClick() {
+        btn_next.setOnClickListener { presenter.launchPayment(this, passangers) }
     }
 
     private fun prepareRV() {

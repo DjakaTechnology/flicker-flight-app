@@ -1,0 +1,80 @@
+package id.djaka.flicker.adapter
+
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.gson.Gson
+import id.djaka.flicker.R
+import id.djaka.flicker.model.AirPort
+import id.djaka.flicker.model.Reservation
+import id.djaka.flicker.ui.detail_order.DetailOrderActivity
+import id.djaka.flicker.util.ROUTE
+import id.djaka.flicker.util.SharedKey
+import id.djaka.flicker.util.Utill
+import kotlinx.android.synthetic.main.rv_tickets.view.*
+
+class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<AdapterRVReservation.PostViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
+        val v = LayoutInflater.from(context).inflate(R.layout.rv_tickets, parent, false)
+        return PostViewHolder(v)
+    }
+
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+        if(data[position].statusId == 2){
+            holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.green))
+            holder.itemView.tv_status.text = data[position].status!!.name
+            holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_checked))
+        }else if(data[position].statusId == 3){
+            holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
+            holder.itemView.tv_status.text = data[position].status!!.name
+        }
+
+        Glide.with(context).load(data[position].route!!.plane!!.airline!!.logo).into(holder.itemView.img_logo)
+
+        holder.itemView.tv_cost.text = data[position].cost.toString()
+        holder.itemView.tv_date.text = Utill.dateToShortDate(data[position].resDate!!)
+        holder.itemView.tv_time.text = Utill.dateToHour(data[position].resDate!!)
+        holder.itemView.tv_passanger.text = data[position].name
+
+        holder.itemView.tv_from_city.text = data[position].route!!.airportFrom!!.city
+        holder.itemView.tv_from_code.text = data[position].route!!.airportFrom!!.code
+
+        holder.itemView.tv_to_city.text = data[position].route!!.airportTo!!.city
+        holder.itemView.tv_to_code.text = data[position].route!!.airportTo!!.code
+
+
+        holder.itemView.cl_card.setOnClickListener {
+            val i = Intent(context, DetailOrderActivity::class.java)
+            i.putExtra(ROUTE, data[holder.adapterPosition].route)
+            i.putExtra("HIDE", true)
+
+            putSharedPreferences(context, Gson().toJson(data[holder.adapterPosition].route))
+            context.startActivity(i) }
+    }
+
+    private fun putSharedPreferences(c:Context, json: String) {
+        val editor = c.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE).edit()
+
+        editor.putString(ROUTE, json)
+        editor.apply()
+    }
+
+    private var data: List<Reservation> = listOf()
+
+    override fun getItemCount(): Int {
+        return data.size
+    }
+
+    fun updateReservation(data: List<Reservation>) {
+        this.data = data
+        notifyDataSetChanged()
+    }
+
+    inner class PostViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+}

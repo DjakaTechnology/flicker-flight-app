@@ -109,3 +109,70 @@ data class Passanger(
     @SerializedName("seat_code")
     var seatCode: String? = ""
 ) : Parcelable
+
+data class Reservation(
+    @SerializedName("checkin_at")
+    val checkinAt: String? = "",
+    @SerializedName("cost")
+    val cost: Int? = 0,
+    @SerializedName("created_at")
+    val createdAt: String? = "",
+    @SerializedName("customer")
+    val customer: Customer? = Customer(),
+    @SerializedName("customer_id")
+    val customerId: Int? = 0,
+    @SerializedName("depart_at")
+    val departAt: String? = "",
+    @SerializedName("destination_id")
+    val destinationId: Int? = 0,
+    @SerializedName("gender_id")
+    val genderId: Int? = 0,
+    @SerializedName("id")
+    val id: Int? = 0,
+    @SerializedName("name")
+    val name: String? = "",
+    @SerializedName("res_code")
+    val resCode: String? = "",
+    @SerializedName("res_date")
+    val resDate: String? = "",
+    @SerializedName("res_loc")
+    val resLoc: String? = "",
+    @SerializedName("route")
+    val route: Route? = Route(),
+    @SerializedName("route_id")
+    val routeId: Int? = 0,
+    @SerializedName("seat_code")
+    val seatCode: String? = "",
+    @SerializedName("staff_id")
+    val staffId: Any? = Any(),
+    @SerializedName("status")
+    val status: Status? = Status(),
+    @SerializedName("status_id")
+    val statusId: Int? = 0,
+    @SerializedName("updated_at")
+    val updatedAt: String? = ""
+)
+
+data class Customer(
+    @SerializedName("address")
+    val address: String? = "",
+    @SerializedName("birthdate")
+    val birthdate: String? = "",
+    @SerializedName("email")
+    val email: String? = "",
+    @SerializedName("gender_id")
+    val genderId: Int? = 0,
+    @SerializedName("id")
+    val id: Int? = 0,
+    @SerializedName("name")
+    val name: String? = "",
+    @SerializedName("phone")
+    val phone: String? = ""
+)
+
+data class Status(
+    @SerializedName("id")
+    val id: Int? = 0,
+    @SerializedName("name")
+    val name: String? = ""
+)

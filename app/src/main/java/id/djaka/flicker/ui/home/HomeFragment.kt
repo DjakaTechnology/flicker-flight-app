@@ -13,9 +13,11 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 import android.app.DatePickerDialog
 import android.content.Intent
 import id.djaka.flicker.model.AirPort
+import id.djaka.flicker.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import id.djaka.flicker.util.AIRPORT_FROM
 import id.djaka.flicker.util.AIRPORT_TO
+import id.djaka.flicker.util.SharedKey
 import java.util.*
 
 class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
@@ -84,7 +86,18 @@ class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
         v.btn_increase_adult.setOnClickListener { presenter.addAdult(1, v.et_adult) }
         v.btn_decrease_adult.setOnClickListener { presenter.addAdult(-1, v.et_adult) }
 
+        prepareWelcomeClick()
+
         prepareDatePicker()
+    }
+
+    private fun prepareWelcomeClick() {
+        if(SharedKey.getUserModel(context) == null) {
+            v.tv_welcome.text = "Hi, Silahkan login terlebih dahulu"
+            v.tv_welcome.setOnClickListener{ (activity as MainActivity).launchLogin()}
+        }else{
+            v.tv_welcome.text = "Hi, ${SharedKey.getUserModel(context)!!.name!!.substringBefore(" ")}"
+        }
     }
 
     override fun onDestroy() {

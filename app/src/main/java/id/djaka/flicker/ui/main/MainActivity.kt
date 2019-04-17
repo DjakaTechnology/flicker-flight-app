@@ -1,13 +1,18 @@
 package id.djaka.flicker.ui.main
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import id.djaka.flicker.R
 import id.djaka.flicker.base.BaseActivity
+import id.djaka.flicker.ui.login.LoginActivity
+import id.djaka.flicker.util.LOGIN
 import id.djaka.flicker.util.SharedKey
+import kotlinx.android.synthetic.main.activity_detail_order.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainPresenter>(), MainView {
@@ -18,8 +23,13 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         setContentView(R.layout.activity_main)
 
         presenter.onViewCreated()
-        val pref:SharedPreferences = this.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE)
-        pref.edit().clear().apply()
+//        val pref:SharedPreferences = this.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE)
+//        pref.edit().clear().apply()
+    }
+
+    fun launchLogin(){
+        val i = Intent(this, LoginActivity::class.java)
+        startActivityForResult(i, LOGIN)
     }
 
     override fun instantiatePresenter(): MainPresenter {
@@ -50,6 +60,12 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         transaction.commit()
 
         last = i
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == LOGIN && resultCode == Activity.RESULT_OK)
+            recreate()
     }
 
     override fun onDestroy() {

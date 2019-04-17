@@ -10,10 +10,8 @@ import id.djaka.flicker.ui.search.SearchActivity
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.model.AirPort
 import id.djaka.flicker.ui.airport.AirportActivity
-import id.djaka.flicker.util.AIRPORT_FROM
-import id.djaka.flicker.util.AIRPORT_TO
-import id.djaka.flicker.util.PASSANGERS
-import id.djaka.flicker.util.SharedKey
+import id.djaka.flicker.ui.login.LoginActivity
+import id.djaka.flicker.util.*
 import java.text.SimpleDateFormat
 import java.util.*
 

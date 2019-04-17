@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TicketsFragment"
+    tools:context=".ui.ticket.TicketsFragment"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,22 +50,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_reservation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
             android:paddingStart="@dimen/activity_padding"
             android:paddingEnd="@dimen/activity_padding"
-            android:clipToPadding="false"
-            android:layout_marginTop="24dp"
-            android:orientation="vertical"
-            android:clipChildren="false"
-            app:layout_constraintTop_toBottomOf="@+id/textView17">
-
-            <include layout="@layout/rv_tickets" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <include layout="@layout/rv_tickets" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <include layout="@layout/rv_tickets" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <include layout="@layout/rv_tickets" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

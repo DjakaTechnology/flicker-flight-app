@@ -3,13 +3,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingLeft="24dp">
+    android:paddingLeft="@dimen/activity_padding"
+    android:paddingTop="@dimen/activity_padding">
 
     <FrameLayout
         android:id="@+id/btn_seat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
         android:background="@drawable/ic_seat"
         android:backgroundTint="@color/red"
         android:text="1"
@@ -23,7 +23,7 @@
             android:fontFamily="@font/avenir_demi"
             android:text="1"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
     </FrameLayout>
 
     <TextView

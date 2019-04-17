@@ -8,6 +8,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
+        android:id="@+id/cl_card"
         android:orientation="vertical"
         app:cardCornerRadius="16dp"
         android:foreground="?selectableItemBackground"
@@ -22,13 +23,14 @@
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_status_bg"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/yellow">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/img_status"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +41,7 @@
                     app:srcCompat="@drawable/ic_clock" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/tv_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -70,14 +72,14 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:rotation="180"
-                    app:layout_constraintBottom_toTopOf="@+id/textView44"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_current_pos2"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_to_city"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_to_code"
                     app:layout_constraintStart_toEndOf="@+id/tv_from_code"
                     app:layout_constraintTop_toTopOf="@+id/tv_from_code"
                     app:srcCompat="@drawable/ic_right_arrow_black" />
 
                 <TextView
-                    android:id="@+id/textView44"
+                    android:id="@+id/tv_to_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_regular"
@@ -87,14 +89,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_from_code" />
 
                 <TextView
-                    android:id="@+id/tv_current_pos2"
+                    android:id="@+id/tv_to_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_demi"
                     android:text="JOG"
                     android:textColor="@color/black_main"
                     android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView44"
+                    app:layout_constraintStart_toStartOf="@+id/tv_to_city"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -139,7 +141,7 @@
                         app:layout_columnWeight="0" />
 
                     <TextView
-                        android:id="@+id/textView31"
+                        android:id="@+id/tv_date"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_regular"
@@ -159,7 +161,7 @@
                         app:layout_columnWeight="0" />
 
                     <TextView
-                        android:id="@+id/textView29"
+                        android:id="@+id/tv_time"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_bold"
@@ -173,31 +175,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_regular"
-                        android:text="Passanger(s)"
+                        android:text="Passanger   "
                         android:textColor="@color/black_main"
                         android:textSize="12sp"
                         app:layout_columnWeight="0" />
 
                     <TextView
-                        android:id="@+id/textView25"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/avenir_regular"
-                        android:text="Passanger Name"
-                        android:textColor="@color/black_main"
-                        android:textSize="12sp"
-                        app:layout_columnWeight="1" />
-
-                    <TextView
-                        android:id="@+id/textView34"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/avenir_regular"
-                        android:textColor="@color/black_main"
-                        app:layout_columnWeight="0" />
-
-                    <TextView
-                        android:id="@+id/textView35"
+                        android:id="@+id/tv_passanger"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_regular"
@@ -218,7 +202,7 @@
                         app:layout_columnWeight="0" />
 
                     <TextView
-                        android:id="@+id/textView41"
+                        android:id="@+id/tv_cost"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_regular"
@@ -228,34 +212,15 @@
                         android:textSize="12sp"
                         app:layout_columnWeight="1" />
 
-                    <TextView
-                        android:id="@+id/textView42"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/avenir_regular"
-                        android:paddingRight="12dp"
-                        android:text="Payment Status"
-                        android:textColor="@color/black_main"
-                        android:textSize="12sp"
-                        app:layout_columnWeight="0" />
-
-                    <TextView
-                        android:id="@+id/textView43"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/avenir_medium"
-                        android:text="Payed"
-                        android:textColor="@color/green"
-                        android:textSize="12sp"
-                        app:layout_columnWeight="1" />
                 </androidx.gridlayout.widget.GridLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/img_logo"
+                android:layout_width="32dp"
+                android:adjustViewBounds="true"
+                android:layout_height="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="24dp"
                 android:layout_weight="0"

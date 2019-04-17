@@ -8,6 +8,7 @@ import id.djaka.flicker.ui.airport.AirportPresenter
 import id.djaka.flicker.ui.login.LoginPresenter
 import id.djaka.flicker.ui.search.SearchPresenter
 import id.djaka.flicker.ui.seat.SeatPresenter
+import id.djaka.flicker.ui.ticket.TicketPresenter
 
 abstract class BasePresenter<out V: BaseView>(protected val view:V){
     private val injector: PresenterInjection = DaggerPresenterInjection
@@ -32,6 +33,7 @@ abstract class BasePresenter<out V: BaseView>(protected val view:V){
             is SearchPresenter -> injector.inject(this)
             is LoginPresenter -> injector.inject(this)
             is SeatPresenter -> injector.inject(this)
+            is TicketPresenter -> injector.inject(this)
         }
     }
 }

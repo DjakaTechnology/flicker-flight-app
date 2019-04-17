@@ -16,8 +16,9 @@ import kotlinx.android.synthetic.main.rv_price_item.*
 class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderView {
     override fun updatePriceDetail(data: Route?) {
         tv_airline.text = "Pergi (" + data!!.plane!!.airline!!.name
-        tv_price.text = "Rp." + data!!.price!! * SharedKey.getPassanger(this)
-        tv_total_price.text = "Rp. " + data!!.price
+        tv_price.text = "Rp." + data!!.price!!
+        tv_total_price.text = "Rp. " + data!!.price!! * SharedKey.getPassanger(this)
+        tv_total_passager.text = "Dewasa : " + SharedKey.getPassanger(this) + "x"
     }
 
     override fun instantiatePresenter(): DetailOrderPresenter {
@@ -33,7 +34,12 @@ class DetailOrderActivity : BaseActivity<DetailOrderPresenter>(), DetailOrderVie
     }
 
     private fun prepareBtn() {
-        btn_order.setOnClickListener { presenter.launchOrder(this) }
+        if(intent.getBooleanExtra("HIDE", false)) {
+            btn_order.setOnClickListener { finish() }
+            btn_order.text = "Tutup"
+        }
+        else
+            btn_order.setOnClickListener { presenter.launchOrder(this) }
     }
 
     override fun onDestroy() {
