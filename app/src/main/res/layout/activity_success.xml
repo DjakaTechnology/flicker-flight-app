@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/avenir_regular"
                 android:padding="12dp"
-                android:text="Berhasil mengupload bukti pembayaran anda, silahkan tunggu konfirmasi dari admin"
+                android:text="Pesanan anda sedang diproses. Laporkan bukti pembayaran untuk mempercepat"
                 android:textAlignment="center"
                 android:textColor="@color/black_main" />
 

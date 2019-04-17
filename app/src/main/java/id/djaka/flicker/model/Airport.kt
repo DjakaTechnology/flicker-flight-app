@@ -88,7 +88,7 @@ data class User(
     @SerializedName("phone")
     val phone: String? = "",
     @SerializedName("token")
-    val token: String? = ""
+    var token: String? = ""
 )
 
 data class Gender(

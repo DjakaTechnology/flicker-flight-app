@@ -7,6 +7,7 @@ import id.djaka.flicker.injection.module.ContextModule
 import id.djaka.flicker.injection.module.NetworkModule
 import id.djaka.flicker.ui.airport.AirportPresenter
 import id.djaka.flicker.ui.login.LoginPresenter
+import id.djaka.flicker.ui.profile.ProfilePresenter
 import id.djaka.flicker.ui.search.SearchPresenter
 import id.djaka.flicker.ui.seat.SeatPresenter
 import id.djaka.flicker.ui.ticket.TicketPresenter
@@ -21,6 +22,7 @@ interface PresenterInjection{
     fun inject(loginPresenter: LoginPresenter)
     fun inject(seatPresenter: SeatPresenter)
     fun inject(ticketPresenter: TicketPresenter)
+    fun inject(profilePresenter: ProfilePresenter)
 
     @Component.Builder
     interface Builder{

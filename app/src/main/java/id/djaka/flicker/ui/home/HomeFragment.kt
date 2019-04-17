@@ -93,7 +93,7 @@ class HomeFragment : BaseFragment<HomePresenter>(), HomeView {
 
     private fun prepareWelcomeClick() {
         if(SharedKey.getUserModel(context) == null) {
-            v.tv_welcome.text = "Hi, Silahkan login terlebih dahulu"
+            v.tv_welcome.text = "Hi, Silahkan login"
             v.tv_welcome.setOnClickListener{ (activity as MainActivity).launchLogin()}
         }else{
             v.tv_welcome.text = "Hi, ${SharedKey.getUserModel(context)!!.name!!.substringBefore(" ")}"

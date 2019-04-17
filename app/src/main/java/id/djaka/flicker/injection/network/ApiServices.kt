@@ -35,4 +35,13 @@ interface ApiServices {
 
     @GET("customer/{id}/reservation")
     fun getReservations(@Path("id")id:Int):Deferred<List<Reservation>>
+
+    @POST("customer/update")
+    @FormUrlEncoded
+    fun updateMe(@Field("id")id:Int,
+                @Field("name")name: String,
+                 @Field("address")address:String,
+                 @Field("birthdate")birthdate:String,
+                 @Field("gender_id")genderId: Int,
+                 @Field("phone")phone:String):Deferred<User>
 }

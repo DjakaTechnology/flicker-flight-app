@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment"
+    tools:context=".ui.profile.ProfileFragment"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -181,6 +181,69 @@
                 android:textColor="@color/black_sub"
                 android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_between_form"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Alamat"
+                android:textColor="@color/black_sub"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_et"
+                android:ems="10"
+                android:fontFamily="@font/avenir_medium"
+                android:hint="Tulis alamat"
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black_sub"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/Lahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_between_form"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/avenir_medium"
+                android:text="Berangkat kapan?"
+                android:textColor="@color/black_sub"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_birthdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_et"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_calendar"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:focusable="false"
+                android:fontFamily="@font/avenir_medium"
+                android:hint="Masukkan tanggal lahir"
+                android:inputType="textPersonName"
+                android:paddingStart="18dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black_sub"
+                android:textSize="14sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="144dp" />
+
             <Button
                 android:id="@+id/btn_save"
                 android:layout_width="match_parent"
@@ -191,6 +254,16 @@
                 android:text="Simpan"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_secondary"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary" />
 
         </LinearLayout>
 

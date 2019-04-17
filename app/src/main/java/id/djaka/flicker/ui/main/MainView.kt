@@ -7,4 +7,5 @@ import id.djaka.flicker.base.BaseView
 interface MainView : BaseView {
     fun setBottomNavigationBehaviour(navListener : BottomNavigationView.OnNavigationItemSelectedListener)
     fun replaceFrame(f: Fragment?, i:Int)
+    fun launchLogin()
 }

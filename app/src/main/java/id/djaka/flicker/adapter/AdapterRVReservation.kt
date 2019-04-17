@@ -38,8 +38,8 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
         Glide.with(context).load(data[position].route!!.plane!!.airline!!.logo).into(holder.itemView.img_logo)
 
         holder.itemView.tv_cost.text = data[position].cost.toString()
-        holder.itemView.tv_date.text = Utill.dateToShortDate(data[position].resDate!!)
-        holder.itemView.tv_time.text = Utill.dateToHour(data[position].resDate!!)
+        holder.itemView.tv_date.text = Utill.dateToShortDate(data[position].departAt!!)
+        holder.itemView.tv_time.text = Utill.dateToHour(data[position].departAt!!) + " - " + Utill.dateToHour(data[position].route!!.arrivedAt!!)
         holder.itemView.tv_passanger.text = data[position].name
 
         holder.itemView.tv_from_city.text = data[position].route!!.airportFrom!!.city

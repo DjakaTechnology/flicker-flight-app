@@ -22,12 +22,12 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        presenter.onViewCreated()
+        presenter.onViewCreated(this)
 //        val pref:SharedPreferences = this.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE)
 //        pref.edit().clear().apply()
     }
 
-    fun launchLogin(){
+    override fun launchLogin(){
         val i = Intent(this, LoginActivity::class.java)
         startActivityForResult(i, LOGIN)
     }
@@ -66,6 +66,12 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == LOGIN && resultCode == Activity.RESULT_OK)
             recreate()
+    }
+
+    fun logout(){
+        val pref:SharedPreferences = this.getSharedPreferences(SharedKey.Session.SESSION, Context.MODE_PRIVATE)
+        pref.edit().clear().apply()
+        recreate()
     }
 
     override fun onDestroy() {
