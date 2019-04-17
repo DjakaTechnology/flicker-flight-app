@@ -1,6 +1,7 @@
 package id.djaka.flicker.injection.network
 
 import id.djaka.flicker.model.AirPort
+import id.djaka.flicker.model.Passanger
 import id.djaka.flicker.model.Route
 import id.djaka.flicker.model.User
 import kotlinx.coroutines.Deferred
@@ -23,4 +24,7 @@ interface ApiServices {
     @FormUrlEncoded
     fun login(@Field("email")email:String,
               @Field("password")password:String):Deferred<User>
+
+    @GET("seat/{id}/taken")
+    fun getTaken(@Path("id")routeId:Int):Deferred<List<Passanger>>
 }

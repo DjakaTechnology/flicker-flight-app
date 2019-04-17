@@ -100,6 +100,8 @@ data class Gender(
 
 @Parcelize
 data class Passanger(
+    @SerializedName("id")
+    var id:Int? = 0,
     @SerializedName("gender_id")
     var genderId: Int? = 0,
     @SerializedName("name")

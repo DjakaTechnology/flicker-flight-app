@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:paddingLeft="24dp">
 
     <FrameLayout
         android:id="@+id/btn_seat"
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
         android:background="@drawable/ic_seat"
+        android:backgroundTint="@color/red"
         android:text="1"
         android:textColor="@color/white">
 
@@ -21,6 +23,16 @@
             android:fontFamily="@font/avenir_demi"
             android:text="1"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/avenir_medium"
+        android:paddingLeft="8dp"
+        android:text="TextView"
+        android:textColor="@color/black_main" />
 </LinearLayout>

@@ -11,7 +11,6 @@ import id.djaka.flicker.util.SharedKey
 
 class DetailOrderContactPresenter(detailOrderContactView: DetailOrderContactView) : BasePresenter<DetailOrderContactView>(detailOrderContactView){
     fun launchSeatActivity(c: Context, data: ArrayList<Passanger>){
-        Log.d("Passangers", data.get(0).name)
         val i = Intent(c, SeatActivity::class.java)
         i.putParcelableArrayListExtra(PASSANGERS.toString(), data)
         c.startActivity(i)

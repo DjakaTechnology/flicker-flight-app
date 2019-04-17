@@ -17,7 +17,7 @@ class SearchActivity : BaseActivity<SearchPresenter>(), SearchView{
         tv_from_code.text = from!!.code
 
         tv_to_city.text = to!!.city
-        tv_from_code.text = to!!.code
+        tv_to_code.text = to!!.code
 
         tv_date.text = depart
         tv_passanger.text = "Penumpang :" + passanger.toString()
