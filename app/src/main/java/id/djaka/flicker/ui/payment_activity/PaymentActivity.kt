@@ -21,7 +21,7 @@ import java.io.File
 class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
     override fun showImage(body: Reservation) {
         if(body.paymentProof != "")
-            Glide.with(this).load("http://192.168.0.104/upload/1555490592.png").into(img_upload)
+            Glide.with(this).load(body.paymentProof).into(img_upload)
     }
 
     private var uri: Uri? = null
@@ -39,9 +39,14 @@ class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
     }
 
     private fun prepareBtn() {
-        fl_payment_ib.setOnClickListener { el_payment_ib.expand() }
+        fl_payment_ib.setOnClickListener {
+            if(el_payment_ib.isExpanded)
+                el_payment_ib.collapse()
+            else
+                el_payment_ib.expand()
+        }
         img_upload.setOnClickListener { presenter.uploadImg(this) }
-
+        btn_seat.setOnClickListener { finish() }
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {

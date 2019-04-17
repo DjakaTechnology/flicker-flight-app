@@ -29,7 +29,7 @@ class AdapterRVSeat(private val context: SeatActivity) : RecyclerView.Adapter<Ad
         holder.itemView.tv_code.text = (currentRow + 65).toChar() + "" + (position + 1)
 
         if(data.any{it.seatCode ==  holder.itemView.tv_code.text }){
-            holder.itemView.btn_seat.background = ContextCompat.getDrawable(context, R.drawable.ic_seat_taken)
+            holder.itemView.btn_seat.background = ContextCompat.getDrawable(context, R.drawable.ic_seat_unavailable)
             holder.itemView.tv_code.setTextColor(Color.WHITE)
             holder.itemView.btn_seat.isEnabled = false
         }

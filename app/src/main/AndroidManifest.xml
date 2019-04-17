@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".SuccessActivity"></activity>
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.airport.AirportActivity" />
         <activity android:name=".ui.seat.SeatActivity" />

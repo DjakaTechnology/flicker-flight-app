@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_tickets.view.*
 class TicketsFragment : BaseFragment<TicketPresenter>(), TicketView {
     override fun updateReservation(response: List<Reservation>) {
         adapter!!.updateReservation(response)
+        v.loading.visibility = View.INVISIBLE
     }
 
     lateinit var v:View

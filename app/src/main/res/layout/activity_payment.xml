@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
                 android:fontFamily="@font/avenir_bold"
-                android:text="14 : 69 WIB"
+                android:text="16 : 59 WIB"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
                 android:fontFamily="@font/avenir_regular"
-                android:text="Tersisa 69 menit : 10 detik"
+                android:text="Bukti pembayaran hanya optional"
                 android:textAlignment="center"
                 android:textColor="@color/black_main"
                 android:textSize="12sp" />
@@ -124,7 +124,7 @@
                     android:paddingTop="12dp"
                     android:paddingEnd="@dimen/activity_padding"
                     android:paddingBottom="12dp"
-                    android:text="Mandiri Internet Banking"
+                    android:text="Bank Internet Banking"
                     android:textColor="@color/black_main" />
 
                 <ImageView
@@ -153,7 +153,7 @@
                     android:paddingTop="12dp"
                     android:paddingEnd="@dimen/activity_padding"
                     android:paddingBottom="12dp"
-                    android:text="Step 1\nStep 2\n"
+                    android:text="1.Buka Web Banking\n2.Masuk akun anda\n3.Buka menu transfer VA\n4.Masukan no VA diatas\n5.Done"
                     android:textColor="@color/black_main" />
             </net.cachapa.expandablelayout.ExpandableLayout>
 
@@ -175,7 +175,7 @@
                 android:layout_marginBottom="24dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/upload" />
+                />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

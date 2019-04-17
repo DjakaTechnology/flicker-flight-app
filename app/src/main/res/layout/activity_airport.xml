@@ -19,6 +19,13 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/bg_main" />
 
+        <ProgressBar
+            android:id="@+id/loading"
+            android:indeterminateTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
         <LinearLayout
             android:padding="@dimen/activity_padding"
             android:clipToPadding="false"

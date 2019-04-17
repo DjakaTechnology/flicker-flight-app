@@ -1,22 +1,19 @@
-package id.djaka.flicker.ui.login
+package id.djaka.flicker.ui.register
 
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.injection.network.ApiServices
 import id.djaka.flicker.model.User
-import id.djaka.flicker.ui.register.RegisterActivity
-import id.djaka.flicker.util.REGISTER
 import id.djaka.flicker.util.SharedKey
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
-class LoginPresenter(loginView: LoginView) : BasePresenter<LoginView>(loginView){
+class RegisterPresenter(registerView: RegisterView) : BasePresenter<RegisterView>(registerView){
     var pref: SharedPreferences? = null
     var model: User? = null
     var job: Job? = null
@@ -27,12 +24,12 @@ class LoginPresenter(loginView: LoginView) : BasePresenter<LoginView>(loginView)
 
     var token:String = ""
 
-    fun doLogin(email:String, password:String,c:Context){
+    fun doRegister(email:String, password:String, name:String,c:Context){
         dialog = ProgressDialog.show(c, "",
             "Memasukkan anda...", true)
 
         job = CoroutineScope(Dispatchers.IO).launch{
-            val request = apiServices.login(email, password)
+            val request = apiServices.register(name, email, password)
 
             withContext(Dispatchers.Main){
                 dialog!!.dismiss()
@@ -40,7 +37,7 @@ class LoginPresenter(loginView: LoginView) : BasePresenter<LoginView>(loginView)
                     model = request.await()
                     putSharedPreferences(c, Gson().toJson(model))
                 }catch (ex: Exception){
-                    showAlert(c, "Email atau Password Salah", "Email atau Password anda salah silahkan coba lagi")
+                    showAlert(c, "Terjadi keasalah", "Pastikan anda menginput data dengan benar atau cek koneksi internet anda")
                 }
             }
         }
@@ -72,10 +69,5 @@ class LoginPresenter(loginView: LoginView) : BasePresenter<LoginView>(loginView)
             AlertDialog.BUTTON_NEUTRAL, "OK"
         ) { dialog, which -> dialog.dismiss() }
         alertDialog.show()
-    }
-
-    fun launchRegister(loginActivity: LoginActivity) {
-        val i = Intent(loginActivity, RegisterActivity::class.java)
-        loginActivity.startActivityForResult(i, REGISTER)
     }
 }

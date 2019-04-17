@@ -25,6 +25,12 @@ interface ApiServices {
     fun login(@Field("email")email:String,
               @Field("password")password:String):Deferred<User>
 
+    @POST("register")
+    @FormUrlEncoded
+    fun register(@Field("name")name:String,
+            @Field("email")email:String,
+              @Field("password")password:String):Deferred<User>
+
     @GET("seat/{id}/taken")
     fun getTaken(@Path("id")routeId:Int):Deferred<List<Passanger>>
 

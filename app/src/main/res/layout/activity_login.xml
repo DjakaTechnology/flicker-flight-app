@@ -92,4 +92,14 @@
         android:background="@drawable/bg_btn_primary"
         android:text="Masuk"
         android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/avenir_medium"
+        android:paddingTop="6dp"
+        android:text="Belum punya akun ? Klik disini"
+        android:textAlignment="textEnd" />
 </LinearLayout>

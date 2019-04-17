@@ -40,6 +40,7 @@ class AirportActivity : BaseActivity<AirportPresenter>(), AirportView {
 //    }
 
     override fun updateAirport(data: List<AirPort>) {
+        loading.visibility = View.GONE
         adapter.updateAirport(data)
     }
 

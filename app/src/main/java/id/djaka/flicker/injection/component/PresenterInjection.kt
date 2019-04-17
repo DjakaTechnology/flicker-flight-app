@@ -10,6 +10,7 @@ import id.djaka.flicker.ui.login.LoginPresenter
 import id.djaka.flicker.ui.payment_activity.PaymentActivity
 import id.djaka.flicker.ui.payment_activity.PaymentPresenter
 import id.djaka.flicker.ui.profile.ProfilePresenter
+import id.djaka.flicker.ui.register.RegisterPresenter
 import id.djaka.flicker.ui.search.SearchPresenter
 import id.djaka.flicker.ui.seat.SeatPresenter
 import id.djaka.flicker.ui.ticket.TicketPresenter
@@ -26,6 +27,7 @@ interface PresenterInjection{
     fun inject(ticketPresenter: TicketPresenter)
     fun inject(profilePresenter: ProfilePresenter)
     fun inject(paymentPresenter: PaymentPresenter)
+    fun inject(registerPresenter: RegisterPresenter)
 
     @Component.Builder
     interface Builder{
