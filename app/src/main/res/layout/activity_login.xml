@@ -41,7 +41,7 @@
         android:ems="10"
         android:fontFamily="@font/avenir_medium"
         android:hint="Masukkan email anda"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:paddingStart="18dp"
         android:paddingTop="12dp"
         android:paddingEnd="18dp"
