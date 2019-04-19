@@ -28,12 +28,12 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
+        holder.itemView.tv_status.text = data[position].status!!.name
+        holder.itemView.tv_seat.text = data[position].seatCode
+        holder.itemView.tv_res_code.text = data[position].resCode
         if(data[position].statusId == 2){
             holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.green))
-            holder.itemView.tv_status.text = data[position].status!!.name
             holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_checked))
-            holder.itemView.tv_seat.text = data[position].seatCode
-            holder.itemView.tv_res_code.text = data[position].resCode
 
             holder.itemView.cl_card.setOnClickListener {
                 val i = Intent(context, DetailOrderActivity::class.java)
