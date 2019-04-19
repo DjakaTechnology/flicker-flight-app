@@ -44,13 +44,13 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
                 context.startActivity(i) }
         }else if(data[position].statusId == 3){
             holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
+            holder.itemView.tv_status.text = data[position].status!!.name
 
-            if(data[position].tryCount!! < 1) {
-                holder.itemView.tv_status.text = "Reupload"
-                holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_clock))
-            }else{
+//            if(data[position].tryCount!! < 1) {
+//                holder.itemView.tv_status.text = "Reupload"
+//                holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_clock))
+//            }else
                 holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_close))
-            }
 
             holder.itemView.cl_card.setOnClickListener {
                 val i = Intent(context, PaymentActivity::class.java)
