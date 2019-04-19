@@ -5,7 +5,9 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import id.djaka.flicker.R
 import id.djaka.flicker.base.BaseActivity
@@ -19,9 +21,15 @@ import pub.devrel.easypermissions.EasyPermissions
 import java.io.File
 
 class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
+    var oldUrl = ""
     override fun showImage(body: Reservation) {
-        if(body.paymentProof != "")
-            Glide.with(this).load(body.paymentProof).into(img_upload)
+        Log.d("TAG", if(body.paymentProof == null) "true" else "false")
+        if(body.paymentProof != null) Glide.with(this).load(body.paymentProof).into(img_upload)
+        else img_upload.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.upload))
+
+        if(oldUrl == body.paymentProof!! && oldUrl != "")
+            Toast.makeText(this, "Kesempatan revisi sudah habis, silahkan pesan ulang tiket anda", Toast.LENGTH_LONG).show()
+        oldUrl = body.paymentProof!!
     }
 
     private var uri: Uri? = null

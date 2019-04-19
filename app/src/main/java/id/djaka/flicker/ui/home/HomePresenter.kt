@@ -22,6 +22,8 @@ class HomePresenter(homeView: HomeView) : BasePresenter<HomeView>(homeView){
     }
 
     fun launchSearchActivity(c:Context, airportFrom: AirPort?, airportTo: AirPort?, passanger:Int, depart:String){
+        if(airportFrom == null || airportTo == null)
+            return
         val i = Intent(c, SearchActivity::class.java)
         i.putExtra(AIRPORT_TO.toString(), airportTo)
         i.putExtra(AIRPORT_FROM.toString(), airportFrom)

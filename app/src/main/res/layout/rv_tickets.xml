@@ -151,6 +151,26 @@
                         app:layout_columnWeight="1" />
 
                     <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Res Code"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/tv_res_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_bold"
+                        android:text="A32 (ASDASD)"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
                         android:id="@+id/textView28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -186,6 +206,26 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/avenir_regular"
                         android:text="Passanger Name"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_regular"
+                        android:text="Seat Code"
+                        android:textColor="@color/black_main"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="0" />
+
+                    <TextView
+                        android:id="@+id/tv_seat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_bold"
+                        android:text="A32 (ASDASD)"
                         android:textColor="@color/black_main"
                         android:textSize="12sp"
                         app:layout_columnWeight="1" />

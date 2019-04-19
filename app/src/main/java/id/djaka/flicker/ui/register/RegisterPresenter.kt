@@ -5,12 +5,14 @@ import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Patterns
 import com.google.gson.Gson
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.injection.network.ApiServices
 import id.djaka.flicker.model.User
 import id.djaka.flicker.util.SharedKey
 import kotlinx.coroutines.*
+import java.util.regex.Matcher
 import javax.inject.Inject
 
 class RegisterPresenter(registerView: RegisterView) : BasePresenter<RegisterView>(registerView){
@@ -25,8 +27,18 @@ class RegisterPresenter(registerView: RegisterView) : BasePresenter<RegisterView
     var token:String = ""
 
     fun doRegister(email:String, password:String, name:String,c:Context){
+        if(email == "" || password == "" || name == ""){
+            showAlert(c, "Periksa input", "Pastikan anda sudah mengisi form dengan benar")
+            return
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            showAlert(c, "Kesalahan email", "Isi alamat email dengan benar")
+            return
+        }
+
         dialog = ProgressDialog.show(c, "",
-            "Memasukkan anda...", true)
+            "Membuat akun...", true)
 
         job = CoroutineScope(Dispatchers.IO).launch{
             val request = apiServices.register(name, email, password)
@@ -37,7 +49,7 @@ class RegisterPresenter(registerView: RegisterView) : BasePresenter<RegisterView
                     model = request.await()
                     putSharedPreferences(c, Gson().toJson(model))
                 }catch (ex: Exception){
-                    showAlert(c, "Terjadi keasalah", "Pastikan anda menginput data dengan benar atau cek koneksi internet anda")
+                    showAlert(c, "Terjadi keasalah", "Email sudah digunakan")
                 }
             }
         }

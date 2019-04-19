@@ -95,7 +95,7 @@
                 android:paddingTop="24dp"
                 android:paddingEnd="@dimen/activity_padding"
                 android:paddingBottom="8dp"
-                android:text="Bank Pembayaran"
+                android:text="Cara Pembayaran"
                 android:textColor="@color/black_main"
                 android:textSize="18sp" />
 
@@ -168,8 +168,8 @@
 
             <ImageView
                 android:id="@+id/img_upload"
-                android:layout_width="240dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
@@ -200,7 +200,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/bg_btn_primary"
-            android:text="Simpan"
+            android:text="Tutup"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 

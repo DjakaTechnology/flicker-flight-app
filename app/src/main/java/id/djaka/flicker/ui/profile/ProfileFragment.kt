@@ -26,6 +26,7 @@ class ProfileFragment : BaseFragment<ProfilePresenter>(), ProfileView{
 
     override fun loadUserData(user: User) {
         v.et_name.setText(user.name)
+        v.tv_name.text = user.name
         v.et_email.setText(user.email)
         v.et_phone.setText(user.phone)
         v.sp_gender.setSelection(user.genderId!! - 1)

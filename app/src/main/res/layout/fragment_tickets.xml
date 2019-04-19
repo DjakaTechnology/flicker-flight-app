@@ -44,7 +44,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/avenir_bold"
-            android:text="Aktif"
+            android:text="Tiket"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"

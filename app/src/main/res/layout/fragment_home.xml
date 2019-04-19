@@ -161,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         android:src="@drawable/ic_switch"
-                        app:backgroundTint="@color/white" />
+                        app:backgroundTint="@color/colorPrimary" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"

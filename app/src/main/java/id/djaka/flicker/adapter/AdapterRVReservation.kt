@@ -32,6 +32,8 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
             holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.green))
             holder.itemView.tv_status.text = data[position].status!!.name
             holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_checked))
+            holder.itemView.tv_seat.text = data[position].seatCode
+            holder.itemView.tv_res_code.text = data[position].resCode
 
             holder.itemView.cl_card.setOnClickListener {
                 val i = Intent(context, DetailOrderActivity::class.java)
@@ -42,7 +44,19 @@ class AdapterRVReservation(private val context: Context) : RecyclerView.Adapter<
                 context.startActivity(i) }
         }else if(data[position].statusId == 3){
             holder.itemView.cl_status_bg.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
-            holder.itemView.tv_status.text = data[position].status!!.name
+
+            if(data[position].tryCount!! < 1) {
+                holder.itemView.tv_status.text = "Reupload"
+                holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_clock))
+            }else{
+                holder.itemView.img_status.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_close))
+            }
+
+            holder.itemView.cl_card.setOnClickListener {
+                val i = Intent(context, PaymentActivity::class.java)
+                i.putExtra(RESERVATION.toString(), data[holder.adapterPosition])
+                context.startActivity(i)
+            }
         }else{
             holder.itemView.cl_card.setOnClickListener {
                 val i = Intent(context, PaymentActivity::class.java)
