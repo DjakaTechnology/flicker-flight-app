@@ -27,9 +27,9 @@ class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
         if(body.paymentProof != null) Glide.with(this).load(body.paymentProof).into(img_upload)
         else img_upload.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.upload))
 
-        if(oldUrl == body.paymentProof!! && oldUrl != "")
+        if(body.paymentProof != null && oldUrl == body.paymentProof && oldUrl != "")
             Toast.makeText(this, "Kesempatan revisi sudah habis, silahkan pesan ulang tiket anda", Toast.LENGTH_LONG).show()
-        oldUrl = body.paymentProof!!
+        oldUrl = if(body.paymentProof != null) body.paymentProof!! else ""
     }
 
     private var uri: Uri? = null
