@@ -2,7 +2,7 @@
 
 How to use :<br>
 1. Make sure you also grabbed the API https://github.com/DjakaTechnology/flicker-flight-api<br>
-2. Run your ip in your public ip address (e.g 192.168.1.4)<br>
+2. Run your API in your public ip address (e.g 192.168.1.4)<br>
 3. Change ip in URL in Util\Constant.kt to your ip address<br>
 4. Run<br>
 
