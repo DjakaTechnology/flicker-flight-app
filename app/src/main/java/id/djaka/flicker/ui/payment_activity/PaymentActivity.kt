@@ -24,7 +24,7 @@ class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
     var oldUrl = ""
     override fun showImage(body: Reservation) {
         Log.d("TAG", if(body.paymentProof == null) "true" else "false")
-        if(body.paymentProof != null) Glide.with(this).load(body.paymentProof).into(img_upload)
+        if(body.paymentProof != null) Glide.with(this).load(body.paymentProof).override(1600, 1600).into(img_upload)
         else img_upload.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.upload))
 
         if(body.paymentProof != null && oldUrl == body.paymentProof && oldUrl != "")
@@ -69,12 +69,8 @@ class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
             uri = data!!.data
             if (EasyPermissions.hasPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 Toast.makeText(this, "Uploading...", Toast.LENGTH_SHORT).show()
-                val id = RequestBody.create(MediaType.parse("text/plain"), intent.getParcelableExtra<Reservation>(
-                    RESERVATION.toString()).id.toString())
-               presenter.doUpload(id, Utill.createImgPart(
-                    File(Utill.getRealPathFromURIPath(uri!!, this))
-               )
-                )
+                val id = intent.getParcelableExtra<Reservation>(RESERVATION.toString()).id.toString()
+               presenter.doUpload(id, uri!!)
             } else {
                 EasyPermissions.requestPermissions(this, "Required Permission",
                     PaymentPresenter.READ_REQUEST_CODE,

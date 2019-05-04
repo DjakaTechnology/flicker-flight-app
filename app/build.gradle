@@ -61,4 +61,8 @@ dependencies {
 
     // For developers using the Android Support Library
     implementation 'pub.devrel:easypermissions:1.2.0'
+
+    //Work Manager
+    def work_version = "1.0.0-beta02"
+    implementation "android.arch.work:work-runtime-ktx:$work_version"
 }

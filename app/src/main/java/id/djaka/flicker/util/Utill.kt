@@ -1,6 +1,7 @@
 package id.djaka.flicker.util
 
 import android.app.Activity
+import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
@@ -36,8 +37,8 @@ object Utill{
         val dateFormat = SimpleDateFormat("yyy-MM-dd")
         return dateFormat.format(SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date))
     }
-    fun getRealPathFromURIPath(contentURI: Uri, activity: Activity): String {
-        val cursor = activity.contentResolver.query(contentURI, null, null, null, null)
+    fun getRealPathFromURIPath(contentURI: Uri, context: Context): String {
+        val cursor = context.contentResolver.query(contentURI, null, null, null, null)
         if (cursor == null)
             return contentURI.getPath()!!
         else {

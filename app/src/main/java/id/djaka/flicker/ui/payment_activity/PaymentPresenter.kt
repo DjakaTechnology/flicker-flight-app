@@ -2,17 +2,24 @@ package id.djaka.flicker.ui.payment_activity
 
 import android.Manifest.permission.READ_EXTERNAL_STORAGE
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.widget.Toast
+import androidx.work.*
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.injection.network.ApiServices
 import id.djaka.flicker.model.Reservation
+import id.djaka.flicker.worker.UploadWorker
+import id.djaka.flicker.util.KEY_IMAGE_ID
+import id.djaka.flicker.util.KEY_IMAGE
 import kotlinx.coroutines.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
 import javax.inject.Inject
+import java.util.concurrent.TimeUnit
+
 
 class PaymentPresenter(paymentView: PaymentView) : BasePresenter<PaymentView>(paymentView){
     companion object {
@@ -48,15 +55,23 @@ class PaymentPresenter(paymentView: PaymentView) : BasePresenter<PaymentView>(pa
     }
 
 
-    fun doUpload(id:RequestBody, fileToUpload: MultipartBody.Part) {
-        uploadJob = CoroutineScope(Dispatchers.IO).launch {
-            val result = apiServices.uploadImg( id,fileToUpload).await()
+    fun doUpload(id:String, fileToUpload: Uri) {
+        //This is the subclass of our WorkRequest
+        val constraints = Constraints.Builder()
+            .setRequiredNetworkType(NetworkType.CONNECTED)
+            .build()
 
-            withContext(Dispatchers.Main) {
-                if (result.isSuccessful) onSucceed(result.body()!!)
-                else Log.e("UPLOAD", result.errorBody().toString())
-            }
-        }
+        val setData = workDataOf(KEY_IMAGE_ID to id, KEY_IMAGE to fileToUpload.toString())
+
+        val uploadWorkRequest = OneTimeWorkRequestBuilder<UploadWorker>()
+            .setConstraints(constraints)
+            .setInputData(setData)
+            .setBackoffCriteria(
+                BackoffPolicy.LINEAR,
+                OneTimeWorkRequest.MIN_BACKOFF_MILLIS,
+                TimeUnit.MILLISECONDS)
+            .build()
+        WorkManager.getInstance().enqueue(uploadWorkRequest)
     }
 
     private fun onSucceed(body: Reservation) {
