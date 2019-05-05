@@ -8,23 +8,20 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LifecycleOwner
 import com.bumptech.glide.Glide
 import id.djaka.flicker.R
 import id.djaka.flicker.base.BaseActivity
 import id.djaka.flicker.model.Reservation
 import id.djaka.flicker.util.RESERVATION
-import id.djaka.flicker.util.Utill
 import kotlinx.android.synthetic.main.activity_payment.*
-import okhttp3.MediaType
-import okhttp3.RequestBody
 import pub.devrel.easypermissions.EasyPermissions
-import java.io.File
 
-class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView {
+class PaymentActivity : BaseActivity<PaymentPresenter>(), PaymentView, LifecycleOwner {
     var oldUrl = ""
     override fun showImage(body: Reservation) {
-        Log.d("TAG", if(body.paymentProof == null) "true" else "false")
-        if(body.paymentProof != null) Glide.with(this).load(body.paymentProof).override(1600, 1600).into(img_upload)
+        Log.d("TAG", if(body.paymentProof == null) "true" else body.paymentProof)
+        if(body.paymentProof != null) Glide.with(this).load(body.paymentProof).placeholder(ContextCompat.getDrawable(this, R.drawable.upload)).into(img_upload)
         else img_upload.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.upload))
 
         if(body.paymentProof != null && oldUrl == body.paymentProof && oldUrl != "")

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.work.*
 import id.djaka.flicker.base.BasePresenter
 import id.djaka.flicker.injection.network.ApiServices
@@ -72,6 +73,16 @@ class PaymentPresenter(paymentView: PaymentView) : BasePresenter<PaymentView>(pa
                 TimeUnit.MILLISECONDS)
             .build()
         WorkManager.getInstance().enqueue(uploadWorkRequest)
+        WorkManager.getInstance().getWorkInfoByIdLiveData(uploadWorkRequest.id)
+            .observe(activity, Observer { workInfo ->
+                // Check if the current work's state is "successfully finished"
+                if (workInfo != null && workInfo.state == WorkInfo.State.SUCCEEDED) {
+                    val res = Reservation()
+                    res.paymentProof = workInfo.outputData.getString(KEY_IMAGE)
+                    view.showImage(res)
+                    Log.d("SUCCESS", "SUCCESS")
+                }
+            })
     }
 
     private fun onSucceed(body: Reservation) {

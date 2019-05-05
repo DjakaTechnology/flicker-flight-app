@@ -153,7 +153,7 @@ data class Reservation(
     @SerializedName("updated_at")
     val updatedAt: String? = "",
     @SerializedName("payment_proof")
-    val paymentProof: String? = "",
+    var paymentProof: String? = "",
     @SerializedName("try_count")
     val tryCount:Int? = 0
 ) : Parcelable

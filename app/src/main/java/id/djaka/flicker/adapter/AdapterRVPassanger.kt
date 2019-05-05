@@ -1,12 +1,12 @@
 package id.djaka.flicker.adapter
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.RecyclerView
 import id.djaka.flicker.R
 import id.djaka.flicker.model.Passanger
@@ -20,9 +20,21 @@ class AdapterRVPassanger(private val context: Context) : RecyclerView.Adapter<Ad
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.itemView.tv_title.text = "Dewasa " + (position + 1)
-        holder.itemView.et_name.doOnTextChanged { text, start, count, after ->
-            data[position].name = text.toString()
-        }
+
+        holder.itemView.et_name.addTextChangedListener(object:TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                data[position].name = s.toString()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+        })
 
         holder.itemView.sp_gender.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {

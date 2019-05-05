@@ -5,6 +5,7 @@ import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
+import id.djaka.flicker.worker.UploadWorker
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -48,8 +49,8 @@ object Utill{
         }
     }
 
-    fun createImgPart(file: File): MultipartBody.Part {
-        val mFile = RequestBody.create(MediaType.parse("image/*"), file)
+    fun createImgPart(file: File, uploadWorker: UploadWorker): MultipartBody.Part {
+        val mFile = ProgressRequestBody(file, "image", uploadWorker)
         val part = MultipartBody.Part.createFormData("img", file.getName(), mFile)
 
         Log.e("TAG", file.getName())

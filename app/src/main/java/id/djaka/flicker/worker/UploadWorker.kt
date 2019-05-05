@@ -23,31 +23,49 @@ import javax.inject.Inject
 import id.djaka.flicker.util.Utill
 import id.djaka.flicker.injection.module.NetworkModule
 import id.djaka.flicker.R
+import id.djaka.flicker.util.ProgressRequestBody
 
 
 private const val LOG_TAG = "UploadWorker"
 private const val KEY_ZIP_PATH = "ZIP_PATH"
 
 class UploadWorker(appContext: Context, workerParams: WorkerParameters)
-    : Worker(appContext, workerParams) {
+    : Worker(appContext, workerParams), ProgressRequestBody.UploadCallbacks {
+    override fun onProgressUpdate(percentage: Int) {
+        displayNotification("Flicker Upload", "Uploading $percentage%")
+    }
+
+    override fun onError() {
+        displayNotification("Flicker Upload", "Failed")
+    }
+
+    override fun onFinish() {
+        displayNotification("Flicker Upload", "Success")
+    }
+
     @Inject
     lateinit var apiServices: ApiServices
 
     var uploadJob: Job? = null
+    var url:String = ""
 
     override fun doWork(): Result {
         try {
             val id = RequestBody.create(MediaType.parse("text/plain"), inputData.getString(KEY_IMAGE_ID)!!)
 
             val fileToUpload = Utill.createImgPart(
-                File(Utill.getRealPathFromURIPath(Uri.parse(inputData.getString(KEY_IMAGE)), applicationContext))
+                File(Utill.getRealPathFromURIPath(Uri.parse(inputData.getString(KEY_IMAGE)), applicationContext)),
+                this
             )
 
             apiServices = NetworkModule.provideApiService(NetworkModule.provideRetrofitInterface(applicationContext), applicationContext)
 
             displayNotification("Flicker Uploader", "Uploading")
             doUpload(id, fileToUpload)
-            return Result.success()
+
+            val outputData = workDataOf(KEY_IMAGE to url)
+
+            return Result.success(outputData)
 
         } catch (e: Exception) {
             return Result.failure()
@@ -77,10 +95,7 @@ class UploadWorker(appContext: Context, workerParams: WorkerParameters)
             val result = apiServices.uploadImg( id,fileToUpload).await()
 
             withContext(Dispatchers.Main) {
-                if(result.isSuccessful)
-                    displayNotification("Flicker Upload", "Success")
-                else
-                    displayNotification("Flicker Upload", "Failed")
+                url = result.body()?.paymentProof!!
             }
         }
     }
