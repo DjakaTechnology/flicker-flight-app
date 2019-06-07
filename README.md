@@ -6,6 +6,10 @@ How to use :<br>
 3. Change ip in URL in Util\Constant.kt to your ip address<br>
 4. Run<br>
 
+## Login Cridentials
+Username : djakajaya89@gmail.com<br>
+Password : 2001<br>
+
 ![Screenshot_20190419-161844](https://user-images.githubusercontent.com/19620593/56418778-2c6c8e00-62c2-11e9-89c2-e320b3dfef2e.png)
 
 #### WARNING : This Source code is not production ready beacuse I haven't implement any securities
