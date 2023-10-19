@@ -36,6 +36,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <Spinner
+            android:id="@+id/languageSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            />
+
         <TextView
             android:id="@+id/tv_welcome"
             android:layout_width="wrap_content"
@@ -76,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/avenir_bold"
-                    android:text="Tiket Pesawat"
+                    android:text="@string/tiket_pesawat"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -87,21 +97,23 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/dariMana"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/avenir_medium"
-                        android:text="Dari mana?"
+                        android:text="@string/dari_mana"
                         android:textColor="@color/black_sub"
                         android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/keMana"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/avenir_medium"
                         android:gravity="right"
-                        android:text="Ke mana ?"
+                        android:text="@string/ke_mana"
                         android:textColor="@color/black_sub"
                         android:textSize="12sp" />
 
@@ -130,7 +142,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/avenir_regular"
-                            android:text="Pilih Bandara"
+                            android:text="@string/pilih_bandara"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="@+id/tv_from_code"
                             app:layout_constraintTop_toBottomOf="@+id/tv_from_code" />
@@ -140,7 +152,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/avenir_demi"
-                            android:text="Dari"
+                            android:text="@string/dari"
                             android:textColor="@color/black"
                             android:textSize="24sp"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -196,7 +208,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/avenir_demi"
-                            android:text="Ke"
+                            android:text="@string/ke"
                             android:textColor="@color/black"
                             android:textSize="24sp"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -212,11 +224,12 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/berngkatTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/avenir_medium"
-                        android:text="Berangkat kapan?"
+                        android:text="@string/berangkat_kapan"
                         android:textColor="@color/black_sub"
                         android:textSize="12sp" />
 
@@ -242,7 +255,7 @@
                     android:clickable="true"
                     android:drawableStart="@drawable/ic_calendar"
                     android:drawablePadding="12dp"
-                    android:hint="Masukkan tanggal berangkat"
+                    android:hint="@string/masukkan_tanggal_berangkat"
                     android:ems="10"
                     android:focusable="false"
                     android:fontFamily="@font/avenir_medium"
@@ -308,7 +321,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="@font/avenir_medium"
-                            android:text="Penumpang"
+                            android:text="@string/penumpang"
                             android:textColor="@color/black_sub"
                             android:textSize="12sp"
                             tools:ignore="MissingConstraints" />
@@ -514,7 +527,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="-24dp"
                     android:background="@color/colorPrimary"
-                    android:text="Cari"
+                    android:text="@string/cari"
                     android:textAllCaps="false"
                     android:textColor="@color/white" />
 

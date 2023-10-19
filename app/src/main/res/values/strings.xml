@@ -7,6 +7,15 @@
     <string name="title_ticket">Tiket</string>
     <string name="title_profile">Profil</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tiket_pesawat">Tiket Pesawat</string>
+    <string name="dari_mana">Dari mana?</string>
+    <string name="ke_mana">Ke mana ?</string>
+    <string name="dari">Dari</string>
+    <string name="ke">Ke</string>
+    <string name="pilih_bandara">Pilih Bandara</string>
+    <string name="berangkat_kapan">Berangkat kapan?</string>
+    <string name="masukkan_tanggal_berangkat">Masukkan tanggal berangkat</string>
+    <string name="penumpang">Penumpang</string>
+    <string name="cari">Cari</string>
 </resources>
